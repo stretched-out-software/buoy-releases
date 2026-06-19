@@ -54,10 +54,10 @@ Buoy produces and runs applications on:
 | Platform | Minimum target                                  | Native UI toolkit |
 |----------|-------------------------------------------------|-------------------|
 | macOS    | macOS 12 (Monterey), Apple Silicon or Intel     | AppKit            |
-| Windows  | Windows 10 22H2, x64 or ARM64                   | WinUI 3           |
+| Windows  | Windows 10 22H2, x64 or ARM64                   | comctl v6         |
 | Linux    | A distro providing GTK 4.10+ (e.g. Ubuntu 22.04, Fedora 38, Debian 12) | GTK 4 |
 
-Universal macOS binaries (Apple Silicon + Intel in one bundle) are supported. On Windows, ARM64 and x64 are shipped as separate builds.
+Universal macOS binaries (Apple Silicon + Intel in one bundle) are supported. On Windows and Linux, ARM64 and x64 are shipped as separate builds.
 
 ---
 
@@ -82,10 +82,10 @@ buoy main.bui -o MyApp
 To build for a specific target, pass `--target`:
 
 ```sh
-buoy --target arm64-apple-macos        main.bui -o MyApp.app
-buoy --target x86_64-pc-windows-msvc   main.bui -o MyApp.exe
-buoy --target x86_64-unknown-linux-gnu main.bui -o myapp
-buoy --target universal-apple-macos    main.bui -o MyApp.app
+buoy --target arm64-darwin        main.bui -o MyApp.app
+buoy --target x86_64-pc-windows   main.bui -o MyApp.exe
+buoy --target x86_64-linux        main.bui -o myapp
+buoy --target universal-darwin    main.bui -o MyApp.app
 ```
 
 The default target is your host platform.
