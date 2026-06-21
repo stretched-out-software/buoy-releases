@@ -159,10 +159,4 @@ Dates are not promised; follow the releases for what has actually shipped.
 
 ---
 
-## License
-
-> License terms are not finalized for this pre-release. The applicable license will be stated here and in a `LICENSE` file once set.
-
----
-
 *Buoy is a work in progress. Thanks for trying it early — your issue reports directly shape what ships.*
