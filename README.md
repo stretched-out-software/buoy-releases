@@ -14,7 +14,7 @@ Buoy compiles to native binaries for macOS, Windows, and Linux. It pairs a moder
 - **Readable, BASIC-like syntax.** Familiar `Sub` / `Function` / `Dim` structure, with modern conveniences like `Var` and type inference.
 - **One source tree, every platform.** A "project" is just a folder of `.bui` files. There is no project manifest to maintain or merge.
 - **True cross-compilation.** Any host can target any platform. Build a macOS app from Linux, or a Windows `.exe` from a Mac — no target-platform SDK required on your machine.
-- **First-class tooling.** A Language Server (LSP) drives completion, hover, go-to-definition, and live diagnostics in any LSP-capable editor. A VSCode extension and DAP-based remote debugger are part of the toolchain.
+- **First-class tooling.** A Language Server (LSP) drives completion, hover, go-to-definition, and will do live diagnostics in any LSP-capable editor. A VSCode extension and DAP-based remote debugger are a planned part of the toolchain.
 - **Xojo migration path.** Buoy's syntax is Xojo-inspired and aims for source compatibility as a migration route, while deliberately departing from Xojo where its design choices have proven to be friction points.
 
 ---
@@ -72,7 +72,7 @@ Universal macOS binaries (Apple Silicon + Intel in one bundle) are supported. On
 > The official download location and the package-manager channels (Homebrew, WinGet, and a Linux PPA/COPR/AUR) are **not finalized yet** and will be announced here. For now, grab a build directly from the [Releases](../../releases) page.
 
 1. Download the toolchain build for your operating system and architecture from [**Releases**](../../releases).
-2. Unpack it and put the `bin/` directory on your `PATH`.
+2. Unpack it and put the `buoy` binary on your `PATH`.
 3. Verify the install:
 
    ```sh
