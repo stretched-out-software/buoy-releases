@@ -89,7 +89,7 @@ To build for a specific target, pass `--target`:
 
 ```sh
 buoy --target arm64-darwin        main.bui -o MyApp.app
-buoy --target x86_64-pc-windows   main.bui -o MyApp.exe
+buoy --target x86_64-windows      main.bui -o MyApp.exe
 buoy --target x86_64-linux        main.bui -o myapp
 buoy --target universal-darwin    main.bui -o MyApp.app
 ```
