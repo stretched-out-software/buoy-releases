@@ -1,3 +1,12 @@
+# v0.11.1
+
+## Bug Fixes
+- fix: rewrote lsp caching code
+- fix: Autocomplete now works in VSCode for projects that are not in the buoy directory
+
+
+---
+
 # v0.11.0
 
 ## New Features
