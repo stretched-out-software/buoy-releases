@@ -1,3 +1,15 @@
+# v0.12.0
+
+## New Features
+- feat: Added HTMLView
+- feat: add Int8, UInt8, UInt32 and UInt64
+
+## Bug Fixes
+- fix: linker no longer points at files on a developer machine
+
+
+---
+
 # v0.11.2
 
 ## Bug Fixes
