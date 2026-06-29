@@ -1,3 +1,16 @@
+# v0.15.2
+
+## Bug Fixes
+- Move LSP background thread to a pthread so it can use a bigger heap
+- Fixed a bug in the LSP that was causing crashes in VSCode
+
+## Documentation
+- Prefs design spec
+- Toolbar changes
+
+
+---
+
 # v0.15.1
 
 ## Bug Fixes
