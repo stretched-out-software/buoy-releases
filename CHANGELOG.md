@@ -1,3 +1,27 @@
+# v0.16.0
+
+## New Features
+- Added ContextualMenus
+- First pass at a cross-platform best-practices preference system using native solutions. Pass 1 is raw, publicly viewable values.
+
+## Bug Fixes
+- Fixed some issues with listbox hit testing
+- Stop module-level consts from shadowing same-named locals in codegen
+- Align LLVM backend CodeGenOptLevel with the -O IR-pipeline level
+- Arm64 CodeGenOptLevel::None crash (which turned out to be a buoy codegen defect — an over-wide i64 store into a 4-byte Int32 slot that smashed the saved frame pointer)
+
+## Documentation
+- More packaging research
+- Add a plan for declare library resolution
+- Control to window identity issue
+- Bug closed
+- More findings
+- Crash findings associated with optimization levels
+- Bug report
+
+
+---
+
 # v0.15.2
 
 ## Bug Fixes
