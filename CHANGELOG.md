@@ -1,3 +1,20 @@
+# v0.19.2
+
+## Bug Fixes
+- Revert the default path for buoy now that it's installed in the path
+- Wait longer for the debugger to become available before throwing an error
+- Now uses a better system for finding debugserver
+- When running, if the "main" function cannot be found, the plugin no longer guesses if there are multiple candidates available, showing a dialog for the user to choose one instead.
+
+## Changes
+- Set the default path for the buoy binary
+
+## Documentation
+- Plan for the cache isolation work
+
+
+---
+
 # v0.19.0
 
 ## New Features
