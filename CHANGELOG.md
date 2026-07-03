@@ -1,3 +1,32 @@
+# v0.19.0
+
+## New Features
+- Implement VSCode Debugger
+- Add CString as a real language type, fixing the free after use issue for 3rd party libraries
+- Add quoted-path Import syntax (§2.4.6)
+- Add default hotkeys for build and run in vscode
+- Add Global. qualifier to reach a method-shadowed global function
+- Bare calls resolve to sibling/inherited instance methods (§4.3/§4.8)
+
+## Bug Fixes
+- Promote re-export/package-qualified imports to spec, fix .bui extension casing
+- Detect ambiguous module names across quoted-path imports (E208)
+- VSCode builds now go into a folder named "Builds" next to the main project file
+- Suppress the codesigning warnings about replacing signatures on macos
+- Vscode: methods without return types no longer show " as " in the tooltip
+- // and /* */ comments are now colored correctly in vscode
+- Syntax coloring for classes after the "new" keyword are no longer offset by 4
+- Add #if blocks to the things that get indented
+- Fix VSCode paste duplication bug
+
+## Documentation
+- Document unqualified method calls + Global. qualifier; add sample
+- Add implementation plan for unqualified method calls + Global qualifier
+- Add design spec for unqualified method calls + Global qualifier
+
+
+---
+
 # v0.17.1
 
 ## Bug Fixes
