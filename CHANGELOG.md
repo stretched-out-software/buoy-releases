@@ -1,3 +1,12 @@
+# v0.19.3
+
+## Bug Fixes
+- When buoy is called through the symlink, it now properly resolves its dependencies to wherever it was installed
+- VSCode: When building, if the current directory is not writable, builds now go to a user-configurable folder
+
+
+---
+
 # v0.19.2
 
 ## Bug Fixes
