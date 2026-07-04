@@ -1,3 +1,13 @@
+# v0.19.4
+
+## Bug Fixes
+- Fixed a bug that caused stdlib linking to fail
+- Re-add lib/runtime binaries as proper LFS pointers
+- Add --app-type console to window-block/window-events/counter_window_fixture tests
+
+
+---
+
 # v0.19.3
 
 ## Bug Fixes
