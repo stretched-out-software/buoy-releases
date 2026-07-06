@@ -1,3 +1,76 @@
+# v0.20.0
+
+## New Features
+- Redirect console output to log sink on Windows (§28.8)
+- Redirect console output to log sink on Unix (§28.8)
+- Add UnsupportedOperationException sample; close README gaps
+- Reject programs that reach both RunAsService and the UI runtime (E2801)
+- Add UnsupportedOperationException and the headless UI-control guard
+- Wire Application.RunAsService to the Windows SCM backend
+- Add Windows SCM backend for buoy_service (Application.RunAsService)
+- Add Application.RunAsService and the five Service* events
+- Add buoy_service native runtime (macOS + Linux) for Application.RunAsService
+- Main() function now supports returning an integer exitcode which is sent back to the OS
+- Add Treat...As...Else Treat...End Treat narrowing statement
+- Add T(x) cast-constructor sugar for classes and interfaces
+- Add IllegalCastException for failed checked downcasts
+- Add IllegalCastException for failed checked downcasts
+- Add Toolbar demo sample on macOS
+- Add SystemIcon via SF Symbols for Toolbar icons on macOS
+- Add Toolbar structural items (Separator/Space/FlexibleSpace) on macOS
+- Add Toolbar CustomView on macOS
+- Add Toolbar SearchField on macOS
+- Add Toolbar MenuButton on macOS
+- Add Toolbar Group with SelectionMode enforcement on macOS
+- Add Toolbar ToggleButton on macOS
+- Add Toolbar foundation (Button) on macOS
+
+## Bug Fixes
+- Re-point Windows std handles after redirect; harden service-test signal timing
+- Block signals before spawning the log-reader thread on Unix
+- Reconcile E2801 docs with actual buoy_ui-link-breadth behavior
+- Address Task 3 review findings (stale comment, hardcoded /tmp path)
+- Address final whole-branch review findings for Windows SCM support
+- Url_connection.bui now connects to ipify
+- Rename result variable in service.bui (Result is a reserved keyword)
+- Synchronize Windows SCM status reporting and honor checkpoint/wait-hint
+- Name buoy_service as its own library in the Stage A addendum
+- LSP now merges Partial Class fragments across stdlib files
+- Correct review findings on runtime/stdlib/service.bui
+- Add Linux pre-built buoy_service binaries; fix third_party ignore pattern
+- VSCode extension is now smarter about what main() file it should be building when you Run or Debug
+- Remove duplicate Treat entry from keyword-other-buoy grammar group
+- Correct misleading IfStmt-scoping comment in Treat desugaring
+- Bui_ui_window_content_height excludes the toolbar band
+- Consolidate toolbar band positioning into one helper
+- Rebuild macOS/Linux runtimes so they land in Git LFS properly
+- VSCode now reports less things as errors that are not.
+- Toolbar SF Symbol icons render solid black instead of adaptive
+- Correct 2x-oversized Toolbar SF Symbol/Picture icons on Retina
+- Add Visible round-trip test coverage for ToolbarItem
+
+## Documentation
+- File bug report for Windows CRT fd-table initialization gap
+- Document console-to-log-sink redirect (§28.8)
+- Add Stage D implementation plan (console-to-log-sink redirect, §28.8)
+- Api consistency skill
+- Document UI/service mutual exclusion and UnsupportedOperationException
+- Document Application.RunAsService Windows SCM support (Stage B)
+- Document Application.RunAsService (Stage A: macOS + Linux)
+- Mention T(x) cast sugar and Treat narrowing in README status section
+- Document T(x) cast sugar, IllegalCastException, and Treat narrowing
+- Mention IllegalCastException in exception hierarchy references
+- Narrow the older-macOS verification gap to confirmed arm64 13+
+- Correct Toolbar macOS plan after Task 1/7 implementation findings
+- Note older-macOS visual verification as a known gap
+- Document the duplicate-Identifier InvalidArgumentException
+- Document Toolbar (macOS core increment)
+- Add TODO at bui_ui_toolbaritem_set_toggled for Group direct-assign gap
+- Add Toolbar macOS implementation plan
+
+
+---
+
 # v0.19.4
 
 ## Bug Fixes
