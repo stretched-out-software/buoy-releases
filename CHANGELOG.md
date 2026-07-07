@@ -1,3 +1,39 @@
+# v0.21.0
+
+## New Features
+- Add HashPasswordScrypt/Bcrypt/Pbkdf2, unify VerifyPassword across all four algorithms
+- Add Crypto.KdfAlgorithms and the 5-arg DeriveKey overload
+- Add KDF algorithm dispatch, Scrypt/PBKDF2/bcrypt native shim functions
+- Add Bytes.ToHex/ToBase32/ToBase64/ToBase58 and their Shared decode counterparts
+- Add hex/Base32/Base64/Base58 encoding to the Bytes native runtime
+- Add HotpGenerator/TotpGenerator (RFC 4226/6238)
+- Add HOTP/TOTP native shim (RFC 4226/6238)
+- Add CFStringRef for macOS declare toll-free bridging with NSString
+
+## Bug Fixes
+- Str() now converts Int32 values instead of silently returning empty string
+- Add time() to the Linux libc cross-compile stub
+- Package declares/*.bui unreachable for zero-Import consumers
+- ParseOtpCode rejects non-digit codes; add TOTP live-time test coverage
+- Bui_crypto_totp_verify caps driftSteps upper bound
+- Bui_crypto_totp_verify hangs on negative driftSteps
+- Finish String api
+- Buipkgs no longer include source from binary packages.
+- Unhandled exceptions in subclass destructors no longer leak
+- Byref in non-declare settings no longer crash
+
+## Documentation
+- Extend index.md's bytes.md row with the new encoding methods
+- Fix stale sample header, file 2 follow-up bug reports from final review
+- Commit revised design spec and implementation plan for password/KDF phase
+- Document Scrypt/bcrypt/PBKDF2 password hashing and the new KDF algorithms
+- Add HotpGenerator/TotpGenerator to the crypto index.md row
+- Document HotpGenerator/TotpGenerator
+- Add HotpGenerator/TotpGenerator sample demonstration
+
+
+---
+
 # v0.20.0
 
 ## New Features
