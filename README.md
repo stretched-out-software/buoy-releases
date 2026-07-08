@@ -142,6 +142,7 @@ A toolchain install contains everything needed to compile for every supported ta
 - `buoy-lsp` — the language server (host-native).
 - Pre-built per-target runtimes (a shared core, a shared UI runtime, and dead-strippable feature modules).
 - Per-target SDK stubs, so the linker is satisfied without a full platform SDK.
+- A Claude Code skill (`.claude/skills/buoy-syntax/`) — a condensed syntax reference plus an automatic compiler-verification step. Copy it into your own project's `.claude/skills/` to help Claude Code write correct Buoy on the first try instead of guessing from other BASIC dialects.
 
 The complete cross-target toolchain is well under 100 MB.
 

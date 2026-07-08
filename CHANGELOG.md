@@ -1,3 +1,18 @@
+# v0.22.0
+
+## New Features
+- Networking sockets — TCPSocket, UDPSocket, IPCSocket, ServerSocket (#23)
+- Support Boolean <-> Numeric conversion via CType (#22)
+- Add Closure type and Lambda expressions for value-capturing closures
+- Start shipping packages with Buoy
+
+## Bug Fixes
+- Putting multiple statements on the same line is now a compile error
+- Add a method to the compiler for extracting the internal class name(s)
+
+
+---
+
 # v0.21.0
 
 ## New Features
