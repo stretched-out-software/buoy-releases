@@ -130,7 +130,7 @@ A good report includes:
 - The exact command you ran and the full output, including any diagnostic codes (e.g. `E1502`, `W310`).
 - What you expected to happen versus what actually happened.
 
-Please search existing issues first to avoid duplicates. For questions that aren't bugs, use [Discussions](../../discussions) if it's enabled on this repo.
+Please search existing issues first to avoid duplicates. For questions that aren't bugs, use [IfNotNil](https://www.IfNotNil.com) under the **Buoy** category
 
 ---
 
