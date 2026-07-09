@@ -71,8 +71,8 @@ Universal macOS binaries (Apple Silicon + Intel in one bundle) are supported. On
 
 > The official download location and the package-manager channels (Homebrew, WinGet, and a Linux PPA/COPR/AUR) are **not finalized yet** and will be announced here. For now, grab a build directly from the [Releases](../../releases) page.
 
-1. Download the toolchain build for your operating system and architecture from [**Releases**](../../releases).
-2. Unpack it and put the `bin/` directory on your `PATH`.
+1. Download the toolchain build for your operating system and architecture from [**Releases**](../../releases). 
+2. On macOS, install the package. 
 3. Verify the install:
 
    ```sh
