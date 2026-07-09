@@ -1,3 +1,17 @@
+# v0.23.0
+
+## New Features
+- Add default parameter values and named arguments (§9.4.3/§9.4.4) (#29)
+- Add Shell class - persistent shell subprocess with sync Execute() and async DataAvailable (#24)
+- Ad Currency type
+
+## Bug Fixes
+- Calling a method on a Nil property no longer SegFaults
+- Bytes.ToString() no longer just returns "(NULL)"
+
+
+---
+
 # v0.22.0
 
 ## New Features
