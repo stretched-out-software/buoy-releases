@@ -1,3 +1,15 @@
+# v0.24.0
+
+## New Features
+- Merge a user-supplied Info.plist into .app bundle output (#34)
+- Add Targeted Constants and Localizations
+- Add SerialPort/SerialConnection serial-port I/O (serialio package) (#33)
+- Add System.Locale — OS-native number/date/currency formatting (#32)
+- Add System.GetNetworkInterfaces() and NetworkInterface
+
+
+---
+
 # v0.23.0
 
 ## New Features

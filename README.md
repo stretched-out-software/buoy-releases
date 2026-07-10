@@ -1,4 +1,4 @@
-# Buoy - PRERELEASE
+# Buoy - DRAFT
 
 **A cross-platform, compiled programming language and UI framework with a BASIC-like syntax.**
 
@@ -71,8 +71,8 @@ Universal macOS binaries (Apple Silicon + Intel in one bundle) are supported. On
 
 > The official download location and the package-manager channels (Homebrew, WinGet, and a Linux PPA/COPR/AUR) are **not finalized yet** and will be announced here. For now, grab a build directly from the [Releases](../../releases) page.
 
-1. Download the toolchain build for your operating system and architecture from [**Releases**](../../releases). 
-2. On macOS, install the package. 
+1. Download the toolchain build for your operating system and architecture from [**Releases**](../../releases).
+2. Unpack it and put the `bin/` directory on your `PATH`.
 3. Verify the install:
 
    ```sh
@@ -130,7 +130,7 @@ A good report includes:
 - The exact command you ran and the full output, including any diagnostic codes (e.g. `E1502`, `W310`).
 - What you expected to happen versus what actually happened.
 
-Please search existing issues first to avoid duplicates. For questions that aren't bugs, use [IfNotNil](https://ifnotnil.com/c/buoy) under the **Buoy** category. 
+Please search existing issues first to avoid duplicates. For questions that aren't bugs, use [Discussions](../../discussions) if it's enabled on this repo.
 
 ---
 
@@ -143,10 +143,20 @@ A toolchain install contains everything needed to compile for every supported ta
 - Pre-built per-target runtimes (a shared core, a shared UI runtime, and dead-strippable feature modules).
 - Per-target SDK stubs, so the linker is satisfied without a full platform SDK.
 - A Claude Code skill (`.claude/skills/buoy-syntax/`) — a condensed syntax reference plus an automatic compiler-verification step. Copy it into your own project's `.claude/skills/` to help Claude Code write correct Buoy on the first try instead of guessing from other BASIC dialects.
-- Sample Projects — Each feature should have a sample project showing correct usage. 
-- Documentation — Each feature has its own doc page. 
-- Learning Guide — A detailed language tutorial is included that walks users through learning the languaggr while creating a functional app. 
-— Tutorials — Explanations on particular paun ooints are available for study. Things like using layout anchors and app stability with threads. 
+
+The complete cross-target toolchain is well under 100 MB.
+
+---
+
+## Roadmap (high level)
+
+Buoy is being built in stages. Broad direction, subject to change:
+
+- **Now:** the compiler, language server, and per-platform native runtimes; a full object-oriented language with generics, async/await, optional chaining, file I/O, date/time, and HTTP/HTTPS networking built in.
+- **Next:** the `.buipkg` library-packaging format so plugin authors can ship first-class bindings; a visual layout editor.
+- **Later:** automated binding generation from native headers, richer debugger features (watches, conditional breakpoints), and distribution through OS package managers.
+
+Dates are not promised; follow the releases for what has actually shipped.
 
 ---
 
