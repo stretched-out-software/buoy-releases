@@ -1,3 +1,22 @@
+# v0.25.0
+
+## New Features
+- Add TLS 1.2/1.3 support to TCPSocket and ServerSocket (#38)
+- Source Fluent UI System Icons as a cross-platform icon library (#36)
+- Add TextEncoding support
+- Add regex package (typed Regex/Match/RegexError), fix core regex cross-linking
+- Add per-user global package directory (#35)
+
+## Bug Fixes
+- TCPSocket compiles again for Windows targets
+- Linux ARM64 now has text-encoding symbols
+
+## Changes
+- Cryptoprims package has been renamed crypto
+
+
+---
+
 # v0.24.0
 
 ## New Features
