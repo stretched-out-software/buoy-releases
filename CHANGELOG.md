@@ -1,3 +1,25 @@
+# v0.26.0
+
+## New Features
+- DateTime now as an initiator that takes Year, Month, Day, Hour, Minute, Second, Timezone
+- Add trailing-default component-form DateTime.New constructor
+- Add Break debugger-trap statement
+- Project-level app resource manifest (app_resources.json) (#42)
+- Method local declares
+- Add HTTPServer package
+
+## Bug Fixes
+- Debugger now shows values at the top level instead of the internal LLVM id
+- Add TimeZone.OffsetSeconds, make UTC offset computation real (#44)
+- Allow paren-less calls for zero-argument methods (#43)
+- Plist override fixes
+- Fold package declares/ into modules/ for real Private scoping (#41)
+- Grammar fix on Xojo plugin packaging demo
+- Package extraction bookkeeping was per-entry-file instead of shared (#39)
+
+
+---
+
 # v0.25.0
 
 ## New Features
