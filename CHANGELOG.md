@@ -1,3 +1,20 @@
+# v0.27.0
+
+## New Features
+- Add TimeZone.New(offsetSeconds) fixed UTC-offset constructor
+
+## Bug Fixes
+- Intel macOS llvm vendoring fixed so debugger should work again
+- Add missing vscode plugin items
+- Support ByRef parameters on non-Declare functions, methods, and generics
+- A `Structure` with a reference-type field no longer crashes at runtime when returned from a function
+- Windows are now retained until they close so they don't get destroyed when the initialization variable goes out of scope
+- Only search for a static libzstd when LLVM actually links zstd
+- Class property defaults show correctly in the debugger
+
+
+---
+
 # v0.26.0
 
 ## New Features
