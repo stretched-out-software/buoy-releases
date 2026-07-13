@@ -1,3 +1,11 @@
+# v0.27.1
+
+## Bug Fixes
+- Package loader no longer has trouble with certain packages
+
+
+---
+
 # v0.27.0
 
 ## New Features
