@@ -1,7 +1,5 @@
 # Buoy - DRAFT
 
-<a href="https://www.buymeacoffee.com/stretch327" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-red.png" alt="Buy Me a Coffee" style="height: 60px !important;width: 217px !important;" ></a>
-
 **A cross-platform, compiled programming language and UI framework with a BASIC-like syntax.**
 
 Buoy compiles to native binaries for macOS, Windows, and Linux. It pairs a modern, clean dialect of BASIC with a native UI framework, a full language server, and remote debugging — so you can write desktop applications once and ship real native executables on every platform.
@@ -144,6 +142,7 @@ A toolchain install contains everything needed to compile for every supported ta
 - `buoy-lsp` — the language server (host-native).
 - Pre-built per-target runtimes (a shared core, a shared UI runtime, and dead-strippable feature modules).
 - Per-target SDK stubs, so the linker is satisfied without a full platform SDK.
+- A Claude Code skill (`.claude/skills/buoy-syntax/`) — a condensed syntax reference plus an automatic compiler-verification step. Copy it into your own project's `.claude/skills/` to help Claude Code write correct Buoy on the first try instead of guessing from other BASIC dialects.
 
 The complete cross-target toolchain is well under 100 MB.
 
