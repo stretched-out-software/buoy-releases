@@ -1,7 +1,6 @@
 name: Bug Report
 description: Report a bug in Buoy
-title: "[Bug]: "
-labels: ["bug"]
+title: ":bug: "
 body:
   - type: input
     id: version
