@@ -1,0 +1,52 @@
+name: Bug Report
+description: Report a bug in Buoy
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: input
+    id: version
+    attributes:
+      label: Buoy version
+      description: Output of `buoy --version`
+      placeholder: e.g. buoy 0.13.1
+    validations:
+      required: true
+  - type: input
+    id: os
+    attributes:
+      label: Host OS / architecture
+      description: The operating system and CPU architecture you're running Buoy on
+      placeholder: e.g. macOS 14.5, Apple Silicon
+    validations:
+      required: true
+  - type: input
+    id: target
+    attributes:
+      label: Target platform (--target)
+      description: Only needed if you passed --target and it differs from your host
+      placeholder: e.g. x86_64-pc-windows
+    validations:
+      required: false
+  - type: textarea
+    id: repro
+    attributes:
+      label: Code to reproduce
+      description: A minimal .bui snippet that reproduces the problem, plus the exact command you ran
+      render: basic
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Error / actual output
+      description: The full output you got, including any diagnostic codes (e.g. E1502, W310)
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior / output
+      description: What you expected to happen instead
+    validations:
+      required: true
