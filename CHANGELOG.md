@@ -1,3 +1,32 @@
+# v0.28.0
+
+## New Features
+- Add Variant tagged-union value box package (Xojo-conversion shim)
+- Convert DateTime, TimeZone, and TimeInterval to real classes
+- Add buoy --list-deprecations to catalog @Deprecated declarations
+- Add Urgent severity tier for crash/segfault/hang bugs
+
+## Bug Fixes
+- Resolve record-literal payloads inside Some(...)/Ok(...)/Err(...)
+- Close crypto package native/-source bug report, add regression guard
+- Reject Array.RemoveValue/IndexOf/LastIndexOf/Contains value-type mismatches
+- Build buoy_picture.dll's SVG path via native llvm-mingw to fix Windows entrypoint failure
+- Statically link libucrt.a for Windows runtime DLL C99 stdio calls
+- Resolve receiver.PropertyName(index) as array-property indexing, not a method call
+- Reject out-of-range float literals instead of crashing the lexer
+- Reject out-of-range integer literals instead of crashing the lexer
+- Upload companion runtime DLLs/.so for remote CTest lanes
+- Reject Weak on Shared Property/field instead of segfaulting at runtime
+- Guard GTK4 popups/dialogs against unrealized/uninitialized toplevel
+- Windows CRT fd-table functions work without special init; add missing stub exports
+- Add missing loop-idiom-recognize libc symbols to Darwin libSystem.tbd stubs
+- Load full certificate chain in server-side TLS
+- Xor on Integer operands emitted invalid LLVM IR
+- Load full certificate chain in server-side TLS
+
+
+---
+
 # v0.27.1
 
 ## Bug Fixes
