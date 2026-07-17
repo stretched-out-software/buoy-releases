@@ -1,4 +1,4 @@
-# Buoy - DRAFT
+# Buoy - PRE-RELEASE
 
 **A cross-platform, compiled programming language and UI framework with a BASIC-like syntax.**
 
