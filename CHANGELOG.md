@@ -1,3 +1,23 @@
+# v0.30.0
+
+## New Features
+- Add hotkey legend to layout editor palette
+- Disambiguate layout editor between multiple Window/View blocks in one file
+- Resizable window, multi-select drag, and working snap in layout editor
+- Embed Info.plist in the buoy binary and console-mode macOS executables
+- Add declarative View blocks for reusable composite controls
+- Add @DatabaseRecord attribute for compile-time SQLite marshaling
+
+## Bug Fixes
+- Flush temps in dotted-receiver Assigns-call branch to fix codegen crash
+- Stop shipping dead empty examples/ folder in packaged releases
+- Index Window/View/Control/Constraints as indent-openers in the formatter
+- Correctly update all governing anchors in constraint drag steady-state
+- Only run the solver when resizing the window/view
+
+
+---
+
 # v0.29.0
 
 

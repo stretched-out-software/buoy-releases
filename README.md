@@ -152,7 +152,7 @@ The complete cross-target toolchain is well under 100 MB.
 
 Buoy is being built in stages. Broad direction, subject to change:
 
-- **Now:** the compiler, language server, and per-platform native runtimes; a full object-oriented language with generics, async/await, optional chaining, file I/O, date/time, and HTTP/HTTPS networking built in.
+- **Now:** the compiler, language server, and per-platform native runtimes; a full object-oriented language with generics, async/await, optional chaining, file I/O, date/time, and HTTP/HTTPS networking built in; compile-time-marshaled SQLite database access — mark a class `@DatabaseRecord` and query/insert/update it directly, no manual row-mapping code.
 - **Next:** the `.buipkg` library-packaging format so plugin authors can ship first-class bindings; a visual layout editor.
 - **Later:** automated binding generation from native headers, richer debugger features (watches, conditional breakpoints), and distribution through OS package managers.
 
