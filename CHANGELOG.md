@@ -1,3 +1,30 @@
+# v0.31.0
+
+## New Features
+- Make the raw sqlite3 FFI surface private to the database package
+- Generic-method robustness for the Database base class + test migration
+- Add Call statement keyword
+- Rewrite database package as SQLiteDatabase backend of stdlib base
+- Overload sets for generic instance methods
+- Backend-agnostic abstract Database base layer in stdlib
+- Per-project VSCode build config for multi-target Buoy compiles
+
+## Bug Fixes
+- Don't let an Abstract method's optional End consume the enclosing End Class
+- Make layout editor control borders visible in dark themes
+- Percent-decode file:// URIs in the LSP's workspace/import resolution
+- Stop a stray .buoy/ dir from poisoning project-root detection
+- Relocate and package Linux crt0.o for installed toolchains
+- Defer window close callback off AppKit's synchronous teardown to stop close-button crash
+- Copy Windows runtime DLLs correctly when -o has no directory component
+- Alphabetize the control lists in the layout editor
+- Reject Optional =/<> comparison in Sema instead of crashing codegen
+- Stage the actual regression test and closure notes for the RSP bug
+- Default uninitialized Array Of T property to empty array
+
+
+---
+
 # v0.30.0
 
 ## New Features
