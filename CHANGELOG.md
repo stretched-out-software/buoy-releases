@@ -1,3 +1,16 @@
+# v0.33.0
+
+## New Features
+- Add System.Microseconds() monotonic elapsed-time counter
+- Add Inline function/method modifier for LLVM alwaysinline
+
+## Bug Fixes
+- Claim ownership of array-typed elements in array literal codegen
+- Wrap buoy --help output to 75 columns
+
+
+---
+
 # v0.32.0
 
 ## New Features
