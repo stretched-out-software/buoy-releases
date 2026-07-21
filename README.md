@@ -15,6 +15,7 @@ Buoy compiles to native binaries for macOS, Windows, and Linux. It pairs a moder
 - **One source tree, every platform.** A "project" is just a folder of `.bui` files. There is no project manifest to maintain or merge.
 - **True cross-compilation.** Any host can target any platform. Build a macOS app from Linux, or a Windows `.exe` from a Mac — no target-platform SDK required on your machine.
 - **First-class tooling.** A Language Server (LSP) drives completion, hover, go-to-definition, and live diagnostics in any LSP-capable editor. A VSCode extension and DAP-based remote debugger are part of the toolchain.
+- **AI-assistant ready.** Buoy is too new to be in AI training data, so every install ships a kit that fixes that: `buoy ai init` sets up your project so Claude Code, Copilot, Cursor, or any MCP-capable assistant writes real Buoy — verified against the actual compiler and the locally installed docs, not guessed from other BASIC dialects.
 - **Xojo migration path.** Buoy's syntax is Xojo-inspired and aims for source compatibility as a migration route, while deliberately departing from Xojo where its design choices have proven to be friction points.
 
 ---
@@ -142,7 +143,7 @@ A toolchain install contains everything needed to compile for every supported ta
 - `buoy-lsp` — the language server (host-native).
 - Pre-built per-target runtimes (a shared core, a shared UI runtime, and dead-strippable feature modules).
 - Per-target SDK stubs, so the linker is satisfied without a full platform SDK.
-- A Claude Code skill (`.claude/skills/buoy-syntax/`) — a condensed syntax reference plus an automatic compiler-verification step. Copy it into your own project's `.claude/skills/` to help Claude Code write correct Buoy on the first try instead of guessing from other BASIC dialects.
+- An AI coding kit (`ai/`) — run `buoy ai init` in a project to set up your AI assistant for Buoy. It installs a condensed syntax reference with an automatic compiler-verification step, a code-review agent, and instruction files for Claude Code, GitHub Copilot, Cursor, and other tools, plus an MCP server that gives MCP-capable assistants live compile diagnostics and keyword search over the installed documentation. (Also available from VSCode: **Buoy: Set up AI assistant**.)
 
 The complete cross-target toolchain is well under 100 MB.
 

@@ -1,3 +1,50 @@
+# v0.32.0
+
+## New Features
+- Add XSLT support to xml package (Xalan-C++-backed)
+- Add streaming XMLReader; rename Xml-prefixed classes to XML
+- Add XSD schema validation to xml package
+- Add real XPath support to xml package (Xalan-C++-backed)
+- AI coding kit — buoy ai init, MCP docs search, VSCode setup command
+- Add xml package (Xerces-C++-backed DOM core)
+- Suggest event names after Handle in completion
+- Locale-aware Number/Currency formatting via Locale.FormatNumber/FormatCurrency
+- Flesh out FileSystemItem + FileSystemDrive / System drive enumeration
+- Locale-aware DateTime.ToString
+- Wrap zip package's raw minizip-ng FFI in ZipReader/ZipWriter
+- Add System.Folders (SpecialFolder) known-folder resolver
+- Add inline If(condition, trueValue, falseValue) conditional expression
+- Add cross-platform DateTimePicker control
+- Add UDP broadcast and multicast support to UDPSocket
+- Build crypto+buoy_tls for Windows/Linux with OpenSSL, all 6 targets done
+- Rewire CMake/build scripts for OpenSSL, fix two KDF bugs found in testing
+- Port TLS shim (runtime/tls/TlsC.cpp) from Botan to OpenSSL
+- Port crypto package native shim from Botan to OpenSSL
+- Extend postgres package to Linux and Windows (all 6 triples)
+- Add postgres package (PostgreSQL backend for Database abstract class)
+
+## Bug Fixes
+- Bump brace-expansion to 1.1.16/2.1.2/5.0.7 (alerts #15, #16, #17)
+- Bump js-yaml to 4.3.0 (alert #14)
+- Bump markdown-it to 14.3.0 (alert #5)
+- Bump linkify-it to 5.0.2 (alert #13)
+- Bump undici to 7.28.0 (alerts #6, #7, #8, #9, #10, #11, #12)
+- Bump tmp to 0.2.7 (alert #3)
+- Bump form-data to 4.0.6 (alert #4)
+- Bump serialize-javascript to 7.0.7 (alerts #1, #2)
+- Ship only cleaned learning chapters (docs/learning_buoy), not docs/learning
+- Deliver fluenticons as a single compressed .buipkg instead of ~6,238 loose files
+- Default long-form local Array Of T to empty array (urgent segfault)
+- Regression guard + close-loop for macOS window close-box crash (buoy-releases#39)
+- Create Windows named pipe synchronously in ServerSocket.Listen() to close Mode.IPC race
+- Harden DateTimePicker Linux backend against null-deref and floating-ref misuse
+- Call ExitProcess explicitly on Windows so Winsock worker threads can't block exit
+- Extend Linux libc/libpthread stubs for OpenSSL's fuller libc surface
+- Disable OpenSSL async/QUIC, fix Linux atexit versioning, extend macOS libc stubs
+
+
+---
+
 # v0.31.0
 
 ## New Features
