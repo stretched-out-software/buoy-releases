@@ -1,3 +1,23 @@
+# v0.34.0
+
+## New Features
+- Chained array indexing over nested arrays (theArray(i)(j))
+- Add Locale.ParseNumber for locale-aware string-to-number conversion
+- Add Array.Shuffle in-place shuffle method
+
+## Bug Fixes
+- DateTime.MillisFrom1970/SecondsFrom1970 lose all sub-second precision
+- Linux native .so links leak build-machine's absolute cache path into DT_NEEDED
+- Dedupe vendored license files in packaging scripts
+- Claim ownership of array-typed elements in ARC retain/release loops
+- Flush stdio on Linux exit by calling libc exit() from crt0
+- Claim ownership of array-typed Structure/Record fields in ARC
+- Claim array-typed collection ownership in For Each codegen
+- Claim ownership of array-typed elements in IndexAssign/Append/Insert
+
+
+---
+
 # v0.33.0
 
 ## New Features
