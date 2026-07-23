@@ -1,3 +1,11 @@
+# v0.36.0
+
+## New Features
+- Add Windows/Linux build toggles to Mac release workflow
+
+
+---
+
 # v0.35.0
 
 ## New Features
