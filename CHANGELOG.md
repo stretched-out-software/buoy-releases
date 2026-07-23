@@ -126,6 +126,70 @@
 
 ---
 
+# v0.35.0
+
+## New Features
+- ByRef works on arrays and every other reference type
+- Add backlog sweep phase to bug-triage skill
+- Dismiss shipped Dependabot alerts as fix_started
+- Leak detector reports per-object detail instead of just a count
+- Build buoy-dap and buoy-debugstub on Windows and Linux
+- Vendor OpenSSL natively on Windows and Linux self-hosted runners
+- Vendor GoogleTest instead of relying on vcpkg/system packages
+
+## Bug Fixes
+- Retain by-value object/array parameters so reassigning one doesn't free the caller's object
+- Debugger shows array and composite values instead of empty rows
+- Bump hono to 4.12.31 in editors/mcp (alerts #20, #21, #22)
+- Bump fast-uri to 3.1.4 in editors/mcp (alerts #23, #24)
+- Bump fast-uri to 3.1.4 in editors/vscode (alerts #25, #26)
+- Non-macOS builds defaulted to a macOS target; packaged distributions swept their own bundled packages
+- Make build-llvm-prebuilt.yml publish step additive, not destructive
+- Linux .so SONAME/filename mismatch broke zip + regex packages; Windows CRT time exports
+- Package.sh/package-linux.sh never bundled libbuoy_tls.a + OpenSSL
+- Stage examples at zip top level on Linux and Windows
+- Use MSVC CRT _environ instead of GetEnvironmentStringsA
+- Windows portability for ChildProcess.cpp
+- Guard windows.h includes against min/max macros
+- Detect and bundle liblldb.so (Linux) and .lib/.dll (Windows)
+- Bundle lib/runtime and packages/ on Linux and Windows, fix arm64 mislabeling
+- Use bash not pwsh for release-windows.yml publish job LFS step
+- Mark linux-arm64 continue-on-error so publish is not skipped
+- Pin Node 20 in release-linux.yml and build-platforms.yml
+- Resolve --output-dir/--build-dir to absolute paths up front
+- Git safe.directory for self-hosted runners, python3 fallback in package-windows.sh
+- Windows portability for Link.cpp and ResourceManifest.cpp
+- Guard windows.h include against min/max macro collision
+- Windows portability for buoy-lsp Transport and DiagnosticsPublisher
+- Use Set-Location instead of git -C for git lfs pull
+- Pass explicit -C path to git lfs pull under pwsh
+- Use pwsh not bash for git lfs pull on Windows
+- Force git lfs pull after checkout to guarantee real content
+- Fetch real Git LFS content in checkout, not pointer stubs
+- Define S_ISDIR on Windows for TlsC.cpp
+- Make Program explicitly move-only for MSVC
+- MSVC compile errors in Parser.cpp, RegexC.cpp, TlsC.cpp
+- Pin PATH to MSVC tools dir so link resolves to the real linker
+- Use npm ci instead of npm install for the VSCode extension build
+- Prefer Strawberry Perl over Git Bash bundled perl explicitly
+- Force --libdir=lib for native OpenSSL builds
+- Match Linux ARM64 runner's actual label casing (Linux/ARM64)
+- Force clang explicitly when building LLVM on Linux
+- Match Linux x86_64 runner's actual label (X64, not x86_64)
+- Stop stripping LLVM's bin/ from the prebuilt tarball
+- Recognize Windows .dll/.lib naming in vendor-pcre2.sh
+- Match minizip-ng's actual static lib name on Windows
+- Verify SHA256 checksums for downloaded cmake/ninja binaries
+- Convert paths for cl.exe/lib.exe via cygpath, not just exclude flags
+- Replace choco with portable cmake/ninja downloads on Windows CI
+- Prevent Git Bash from mangling MSVC /flag args in vendor-sqlite.sh
+- Surface gh release download errors instead of swallowing them
+- Fall back to python instead of hardcoded python3 in workflows
+- Make vendor-sqlite.sh portable across macOS/Linux/Windows
+
+
+---
+
 # v0.34.0
 
 ## New Features
