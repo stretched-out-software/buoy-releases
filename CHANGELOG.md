@@ -1,3 +1,14 @@
+# v0.36.1
+
+## Bug Fixes
+- Leak detector no longer walks freed nodes (buoy-releases#64)
+- For loop with a negative Step now runs (was zero iterations)
+- Show Buoy project-settings gear on activation, not only after tab switch
+- Attach Linux/Windows packages to the same release as macOS
+
+
+---
+
 # v0.36.0
 
 ## New Features
