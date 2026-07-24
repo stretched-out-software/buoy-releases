@@ -1,3 +1,21 @@
+# v0.37.0
+
+## New Features
+- Sample for labeled Exit For / Continue For
+- Windows installer (Inno Setup) for both architectures
+- Target the named loop from labeled Exit For / Continue For
+- Validate Exit For / Continue For loop-variable labels (E423)
+- Parse optional loop-variable label on Exit For / Continue For
+- For...Downto descending-loop shorthand (buoy-releases#68)
+- GitHub Actions workflow for automated issue triage
+
+## Bug Fixes
+- Return loop frame by value from resolveLoopFrame to avoid dangling pointer
+- Guard Exit/Continue loop-variable rejection on recognized operand
+
+
+---
+
 # v0.36.1
 
 ## Bug Fixes
