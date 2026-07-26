@@ -1,3 +1,28 @@
+# v0.38.0
+
+## New Features
+- BuoyScript — embeddable Buoy JIT (LLVM ORCv2)
+- Value-returning Event/Handle/RaiseEvent + HTMLView.CancelLoad
+- Add Application.Executable As FileSystemItem
+- Add WindowType, Window.Close(), and Window.ShowModally
+- Autosave Project Build Settings webview
+- Add System.Log / LogLevels
+- Add System.EnvironmentVariable (get/set)
+- Add System.CPUCount
+- Bare Import <Package> falls back to a same-named installed package
+
+## Bug Fixes
+- Resolve each library in a multi-library package to its own file
+- Bump brace-expansion to 5.0.8 (alert #27)
+- Nest LogLevels inside Class System
+- Include Windows installer exes in published release assets
+- EmitTryUnwind reverse-iterator invalidated by nested Try in a Finally body
+- Stop false-positive property/method name-collision warning on TimeZone.OffsetFromUtc
+- Release Shared Property object slots at exit, stopping false-positive leak reports
+
+
+---
+
 # v0.37.0
 
 ## New Features
