@@ -1,3 +1,17 @@
+# v0.39.1
+
+## Bug Fixes
+- Cross-link TCPSocket/ServerSocket/TLS for x86_64-darwin
+- Add raise/ldiv to the Linux libc cross-link stub
+- GTK4 Linux controls no longer fire change-events for programmatic sets
+- Export Block-runtime symbols in the x86_64 macOS libSystem.tbd stub
+- Allow unqualified nested-enum references in a Property's default initializer
+- Abstract method with a body no longer desyncs the parser's class scope
+- Export ___exp10/_exp2 in macOS libSystem.tbd stubs for optimized Math.Pow builds
+
+
+---
+
 # v0.39.0
 
 ## New Features
