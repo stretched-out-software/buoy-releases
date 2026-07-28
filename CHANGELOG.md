@@ -1,3 +1,38 @@
+# v0.39.0
+
+## New Features
+- Native .deb/.rpm packages for Linux; switch Linux zip to .tgz
+- Expand Package to whole-package imports, add packages-src fallback
+- Fold Module dots in class-method mangling
+- Resolve Module-qualified classes, enums and calls
+- Resolve flattened Package symbols and report collisions
+- Parse Package and Module declarations
+- Add PackageDecl plus Module nsPrefix/flatten fields
+- Reserve 'Package' and 'Module' keywords
+
+## Bug Fixes
+- Socket background thread racing process-exit teardown of SocketDispatchable.mLock
+- StreamSocket/TCPSocket/ServerSocket leak their OS sockets when dropped without Close()
+- --debug builds segfault destroying a Thread or Task
+- UDPSocket leaks its OS socket when dropped without Close()
+- Windows SCM console-redirect crash was a CRT link-order bug, not Session-0-specific
+- Preserve Event/Operator declarations through generic-class monomorphization
+- Package-qualified module identity for same-named package modules
+- Throw/Try/RaiseEvent silently dropped from generic-class method bodies
+- Emit //, /* */, and #If highlighting rules in VSCode grammar generator
+- VSCode Run button breaks on Windows (PowerShell &&, missing .exe)
+- Constructor throw leaks partially-constructed object
+- Treat a bare 'Package' declaration as a dependency in forEntry()
+- One canonical shadow predicate for Module/namespace qualification
+- Instance fields/Properties shadow Module and namespace names
+- Guard namespace-qualified call dispatch against shadowing locals
+- Guard Module dotted-receiver collapse against shadowing locals
+- Move duplicate-class file attribution to PartialClassMerge
+- Accept soft-keyword class names (Set/Get) in New's dotted-segment loop
+
+
+---
+
 # v0.38.0
 
 ## New Features
