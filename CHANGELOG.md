@@ -1,3 +1,48 @@
+# v0.40.0
+
+## New Features
+- Add yaml package (YamlItem, mirroring JSONItem's API)
+- Add Alignment (TextAlignment) property to Label/TextField/TextArea
+- Add Array.LastIndex(arr) as sugar for Count(arr) - 1
+- Add Stepper class to the Buoy UI stdlib
+- Add composed two-GtkButton Linux bridge for Stepper
+- Add standalone msctls_updown32 Windows bridge for Stepper
+- Add NSStepper-backed macOS bridge for Stepper
+- Add BUI_KIND_STEPPER tag and stepper C ABI prototypes
+
+## Bug Fixes
+- TextField(FieldType.Number) doesn't restrict input on any platform
+- Window-block and other synthesis-pass diagnostics misattribute file to <stdlib:UI>
+- Reject Window-block control names that collide with a synthesized hook
+- Optional<sized-int>.Or(literal) fails LLVM IR verification
+- Random.RandomInteger/Currency.FromInteger/FromMinorUnits/Sleep reject sized ints
+- Array.Count/.Count/Array.LastIndex segfault on a nil array element
+- Uncaught runtime traps print a diagnostic before aborting
+- Assignment through a member on an indexed/call statement head
+- Vendor AppKit.tbd so Declare ... Lib "AppKit" actually links
+- Array-property element write through a dotted/Me receiver
+- Minizip-ng Windows package build — undefined snprintf
+- Identifier-form Import resolves against the importing file's own directory
+- Verify DateTime/TimeZone sized-int args, close stale bug report
+- Mark Export'ed functions dllexport so Windows --library builds actually export symbols
+- Reject compound-assign/read through bare-name Assigns setter with a clear diagnostic
+- Rename regex package's Match consumers to RegexMatch
+- Gate tests/streams.bui and samples/streams.bui tmp paths for Windows
+- Link Windows targets against ucrtbase before msvcrt (cross-CRT crash)
+- Attribute structural diagnostics to the user's file, not <stdlib:UI>
+- Allow zero-arg bare-name Assigns setter dispatch (c() = 5)
+- Move _ftelli64 from msvcrt to ucrtbase in Windows stub (STATUS_ENTRYPOINT_NOT_FOUND)
+- Zip-based remote-test transfer + WSL warm-up for the Linux lab lane
+- Socket_ffi_layer test - gate Windows Import/handles per target
+- Skip resolution for already-loaded prelude imports (E209 regression)
+- Shrink oversized Linux Stepper buttons to match @ControlSize(19, 27)
+- Windows step-count FP epsilon guard; polish docs; file set_range clamp gap; archive plan
+- Correct Stepper step-count flooring and set_range repositioning
+- Disable rpm brp-strip pass to unblock Linux .rpm packaging
+
+
+---
+
 # v0.39.1
 
 ## Bug Fixes
