@@ -1,3 +1,16 @@
+# v0.41.0
+
+## New Features
+- Implement Set algebra (Union, Intersect, Difference, IsSubsetOf, IsSupersetOf)
+- Allow Structure members to declare inline default values
+
+## Bug Fixes
+- Linux .rpm build crashes stripping bundled Windows import-lib stubs
+- Discord release notification errors fail the release, cap math can exceed 2000 chars
+
+
+---
+
 # v0.40.0
 
 ## New Features
