@@ -1,3 +1,16 @@
+# v0.42.0
+
+## New Features
+- Add Application.Windows/WindowCount
+- Add MenuBar.Menus/FindMenuByName/FindMenuByTag
+
+## Bug Fixes
+- Shared Property crashes - non-constant initializers and instance access
+- Application-level menu dispatch dropped when a Window shares a MenuBar
+
+
+---
+
 # v0.41.0
 
 ## New Features
