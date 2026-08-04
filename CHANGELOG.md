@@ -1,3 +1,27 @@
+# v0.44.0
+
+## New Features
+- Add constructor-argument syntax to Window/View/Control block declares
+
+## Bug Fixes
+- Complete Handle MenuSelected As Boolean migration in stale samples/tests/docs
+- Flush buffered stdio before StdOut/StdErr raw write() calls
+- Substitute generic type parameter in CType/TryCast/IsA cast targets
+- Import real ucrtbase log2 instead of double-rounding on Windows
+- Restore sticky IRBuilder debug location after Block/Lambda body emission
+- Reject loop control inside a Lambda targeting an outer loop instead of crashing codegen
+- Merge Windows AppIcon and version resources into one COFF object
+- Make package payload verification O(N) instead of O(N^2)
+- Link libraries referenced only by method-scoped Declares
+- Resolve bare array-element write to instance Property instead of erroring undefined variable
+- Resolve bare array-typed instance Property access instead of erroring undefined function
+- Rebuild Linux x86-64 libbuoy_picture.so with lunasvg, harden build scripts against silent stub fallback
+- Stage Resources/ on remote-test uploads; sanitize fluenticons digest path on Windows
+- Stop attaching .zip/.tgz staging payloads to published releases
+
+
+---
+
 # v0.43.0
 
 ## New Features
