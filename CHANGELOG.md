@@ -1,3 +1,26 @@
+# v0.43.0
+
+## New Features
+- Add SelectFolderDialog and expand file dialog properties
+
+## Bug Fixes
+- Create missing output directory before linking, on all targets
+- Enable AES crypto backend for zip package on Linux
+- Parse explicitly-typed structure literals as call arguments
+- Resolve class-nested enum unqualified in its own method signatures
+- Stop generic Of-list parsing from consuming a following parameter's comma
+- Stop GTK Window teardown from freeing already-destroyed child widgets
+- Sink floating GTK4 widget refs before unref on Linux
+- Universal-darwin desktop .app bundles no longer fail at lipo
+- Add getenv/_putenv_s to Windows ucrtbase stub, fixing System.EnvironmentVariable setter link failure
+- Bound WinHTTP connect/DNS-resolve timeouts on Windows
+- Stop buoy_system.dll implicitly importing iphlpapi.dll on Windows
+- Bump brace-expansion to patched versions (alerts #28, #29)
+- Export bui_message_box_show from Windows buoy_ui.def
+
+
+---
+
 # v0.42.0
 
 ## New Features
