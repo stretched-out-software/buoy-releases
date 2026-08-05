@@ -1,3 +1,22 @@
+# v0.44.1
+
+## Bug Fixes
+- Stepper.SetRange re-clamps an already-set Value when the range narrows
+- Make canonical buoy_ui.def the single source of truth for Windows stubs
+- Make Windows runtime link steps produce reproducible builds
+- Avoid SIGPIPE + pipefail false failure in nm|grep -q self-checks
+- Fixed-mode array mutation now traps NotResizableException, not InvalidArgumentException
+- Add missing sqlite3 sample cross-platform test coverage
+- Drop unreachable field-target support from @Aligned
+- Vendor zlib so its license reaches the release zip
+- Guard plain StreamSocket NativeRead/NativeWrite against closed-fd reuse
+- Reject non-foldable Const initializers in Sema instead of crashing
+- Str() hard-errors on unhandled sized-integer widths
+- Null window callbacks before DestroyWindow — Windows teardown heap corruption
+
+
+---
+
 # v0.44.0
 
 ## New Features
