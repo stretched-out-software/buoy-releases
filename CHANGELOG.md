@@ -1,3 +1,46 @@
+# v0.45.0
+
+## New Features
+- Basic Import flattens by default, opt out with As or selective list
+- Implicit conversion on Dim initializer and plain reassignment
+- Hide underscore-prefixed names from LSP autocomplete
+- Enforce Public/Private on package declares/*.bui, default Private to the package
+- Add Prefs.SetSecure/GetSecure/HasSecure/DeleteSecure and PrefsException
+- Implement Linux libsecret+OpenSSL-fallback backend for secure Prefs
+- Add FileSystemItem.CreateFolder
+- Implement Windows Credential Manager backend for secure Prefs
+- Implement macOS Keychain backend for secure Prefs
+- Declare secure Prefs C ABI in PrefsC.h
+- Add .Name pseudo-property on enum-typed values
+- Resolve Enum.Values Of T to a synthesized Array Of T literal
+- Parse Enum.Values Of T as a namespace call with a type argument
+
+## Bug Fixes
+- Retain accepted ServerSocket connection past ConnectionRequest
+- RunLoop dispatch-queue init race in --library builds
+- Address final-review findings — extend implicit conversion to member writes and Shared/Lazy Property initializers, ship docs/plan/tests
+- Extend implicit conversion fallback to class field initializers
+- Reject @-attributes placed on a declaration that doesn't accept one
+- Validate @Aligned(N) is a power of two >= 8, not just an Integer
+- Create the Linux fallback .enc file 0600, not umask-default
+- Apply the code changes described in 06c6971a
+- Address final whole-branch review findings
+- Use SECRET_SERVICE_OPEN_SESSION for the reachability probe
+- Distinguish libsecret loadable from Secret Service reachable
+- Address code review findings in Linux secure-Prefs backend
+- Array.Append/Insert require exact element type, breaking Liskov substitution
+- Correct DeleteSecureDomain partial-failure and enumerate-error handling
+- Address code review findings in macOS Keychain secure-prefs backend
+- Close RunLoop dispatch queue's lazy check-then-init race
+- Populate TCPSocket.LocalPort via getsockname(), stopgap StreamSocket.Timeout default
+- Close Shell resource leaks on error/teardown paths
+- Reject trailing args on Enum.Values Of T, fix docs and stale comment
+- Update stale EnumEntry doc comment, dedupe .Name codegen branch emission
+- Bare access to own Shared members inside a Shared method; ship Assigns shared-receiver coverage
+
+
+---
+
 # v0.44.1
 
 ## Bug Fixes
