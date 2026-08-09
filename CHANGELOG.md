@@ -1,3 +1,37 @@
+# v0.46.0
+
+## New Features
+- Add Build/Debug buttons to editor toolbar and context menu
+- Add buoy.debug command
+
+## Bug Fixes
+- Default uninitialized String properties/fields to "" instead of null
+- Apply real C-ABI coercion to FFI struct-by-value returns
+- Add ldiv to Windows CRT stubs, fix LDivT LP64/LLP64 mismatch
+- ListBox.RowAt/ColumnAt silently double-scale under real Windows DPI
+- Floor p2l() toward negative infinity instead of truncating toward zero
+- Gate ffi_localtime_r worked example for Windows
+- Unary Not on Integer/Flags Enum produces valid bitwise complement
+- Enforce StreamSocket.Timeout on Connect and Write
+- Resolve `Package <name>` declarations in LSP document analysis
+- Embed asInvoker Windows manifest in every binary Buoy produces
+- Scope workspace/symbol to the whole program's import closure, not just the forward closure
+- Use strtoll instead of strtol for Integer.Parse on Windows
+- Use OS temp dir instead of hardcoded /tmp in http-server test
+- Mangle generic-class Enum type arguments correctly instead of "$Unknown"
+- ServerSocket accept thread never exits on Linux Close(), plus StreamSocket fd leak
+- Type-check Shared Property const-foldable initializers in Sema
+- Remote test harness never closes launched process's stdin, hanging stdin-reading tests
+- Clean stale temp .app bundle before VSCode Run/Debug compile
+- Linux clipboard async read deadlocks on self-owned content (no timeout escape hatch)
+- Rebuild zip package's stale Windows minizip-ng.dll (snprintf + strdup)
+- @Aligned class allocation crashes Windows at load (STATUS_ENTRYPOINT_NOT_FOUND)
+- Cstring test's user-facing strdup declare crashes Windows at load
+- Windows binaries using String.RegexMatch/RegexReplace crash at load (STATUS_ENTRYPOINT_NOT_FOUND)
+
+
+---
+
 # v0.45.0
 
 ## New Features
