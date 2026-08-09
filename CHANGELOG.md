@@ -1,3 +1,17 @@
+# v0.46.1
+
+## Bug Fixes
+- Tests/zip.bui hardcodes POSIX /tmp paths, fails first assertion on Windows
+- Windows ServerSocket Mode.IPC aliases listening pipe as accepted connection, double-closes it
+- Run-remote-test.sh can silently run a stale binary on extract failure
+- Syntax to call a Shared method/property on a generic-class instantiation
+- Fileservice-buoy GET /help crashes with NilObjectException
+- Drop invalid static-local capture in PrefsLinux.cpp std::call_once
+- Bui_picture_to_png passes libpng row_stride in components, not pixels
+
+
+---
+
 # v0.46.0
 
 ## New Features
