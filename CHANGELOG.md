@@ -1,3 +1,45 @@
+# v0.47.0
+
+## New Features
+- Add cross-platform accessibility to UIControl
+- Add Application.UnhandledException crash-reporting hook
+- Add Open Build Graph button to Project Build Settings
+- Add right-click Add/Edit/Delete menus and schema-driven forms
+- Absolute-position, draggable, linkable nodes in the build graph webview
+- Walk the upstream chain when running a build graph node
+- Add node/edge CRUD and persistence to the build graph panel
+- Add custom-step task kind to the build graph task provider
+- Extend build graph postMessage protocol for editable nodes/edges
+- Add build-graph-file persistence (load/save)
+- Add upstream-chain resolution with runMode filtering
+- Add cycle detection for build graph edges
+- Add step-type registry
+- Add Sign step type
+- Add step-type framework, unit test harness, Copy Resources step
+- Add Build Graph panel (v1) - read-only target status board
+
+## Bug Fixes
+- Edge lines anchor to measured connector-dot positions, not guessed math
+- Node stays "running" forever on an early error path
+- Copy Resources hang, wrong-folder targeting, dark-mode borders; add Stop
+- Address live-testing feedback on the build graph webview
+- Sync-guard Shell cross-thread state and close DataAvailable notify race
+- Address final-review findings (shell quoting, copy idempotency, listener leak, test wiring)
+- Suppress post-drag click and reset stale pointer-drag state on re-render
+- Set running status synchronously to close re-entrancy race window
+- Guard against re-entrant node execution and handle executeTask failures
+- Prune edges referencing deleted nodes on rebuild
+- Clean out/test before rebuilding in test:unit script
+- Bump hono to 4.13.1 in editors/mcp (alerts #34, #41, #42, #43)
+- Bump fast-uri override to 3.1.5 in editors/mcp (alert #30)
+- Bump ip-address to 10.4.0 in editors/mcp (alerts #31, #32, #33)
+- Bump fast-uri override to 3.1.5 in editors/vscode (alert #35)
+- Bump js-yaml to 4.3.1 in editors/vscode (alert #44)
+- Bump undici to 7.29.0 in editors/vscode (alerts #36, #37, #38, #39, #40)
+
+
+---
+
 # v0.46.1
 
 ## Bug Fixes
