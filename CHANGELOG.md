@@ -1,3 +1,45 @@
+# v0.48.0
+
+## New Features
+- Add Run Script step type to build graph editor
+- Widen Toolbar to TargetLinux, refresh docs/sample for Windows+Linux rendering
+- Linux toolbar overflow chevron + CustomView/Separator/Space/FlexibleSpace
+- Linux toolbar Group/MenuButton/SearchField item kinds
+- Linux toolbar backend skeleton - Button/ToggleButton with DisplayMode
+- Windows toolbar overflow chevron for items that don't fit the band width
+- Windows toolbar MenuButton chevron indicator, confirm Group icon rendering
+- Windows toolbar Button/ToggleButton owner-draw icon+DisplayMode rendering
+- Add Picture.FromSystemIcon(String) and Toolbar icon-as-String overloads
+
+## Bug Fixes
+- Wire ToolbarCustomView.Overflow to native layout on all 3 platforms
+- ToolbarGroup.PerformAction() incorrectly fires ToolbarAction (Windows/macOS)
+- Run-remote-test.sh only verified the main binary's hash, not companions
+- Linux StreamSocket.Close() never unblocked a reader thread blocked in recv()
+- Linux arm64 accept() failure misread as success (missing SignExtend32)
+- Windows StreamSocket.Close() hangs when reader thread blocked in ReadFile/recv
+- Stop Linux Label controls from pinning the whole window's minimum width
+- Give IconOnly/TextOnly toolbar rows more height
+- Let SearchField/CustomView hide into toolbar overflow again
+- Let Linux toolbar window shrink enough to trigger overflow chevron
+- Add missing SafeArea regression control to toolbar sample
+- Premultiply Windows toolbar overflow popup icon bitmaps
+- Linux toolbar overflow popover torn down every tick + missing dead-chevron guards
+- Close remaining dead-chevron path for toolbar overflow via Space/FlexibleSpace
+- Windows toolbar overflow popup empty when SearchField/CustomView is the only overflowing item
+- Measure Windows toolbar button width from real font metrics
+- Linux toolbar DisplayMode recursion into Group children
+- Windows toolbar icon alpha compositing and IconAndText caption clipping
+- Correct toolbar overflow FlexibleSpace width sum + CustomView UAF
+- Suppress spurious ToolbarAction on programmatic Toggled set
+- Reserve space for MenuButton chevron and fix its font
+- Correct stale comment on toolbar icon rendering scope (Win32)
+- Sync resize_last_w/h in layoutToolbarBand synthetic re-fire
+- Windows WM_SIZE now reports toolbar-band-subtracted content height
+
+
+---
+
 # v0.47.0
 
 ## New Features
