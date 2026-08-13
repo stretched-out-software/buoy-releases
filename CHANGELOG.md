@@ -1,3 +1,20 @@
+# v0.50.0
+
+## New Features
+- Windows native implementation for Picture.Graphics offscreen drawing
+- Implement Linux canvas backing + offscreen Graphics
+- Wire Picture.Graphics/FromBuffer/GetBacking in the Buoy stdlib
+- Implement macOS canvas backing + offscreen Graphics
+- Add shared canvas-backing conversion code and C ABI declarations
+
+## Bug Fixes
+- Use node --test glob instead of bash $(find ...) in test:unit
+- Address final-review findings for Picture.Graphics (feat/picture-graphics)
+- Close ensure_canvas mutex race and generalize the fix
+
+
+---
+
 # v0.49.0
 
 ## New Features
