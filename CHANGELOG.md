@@ -1,3 +1,32 @@
+# v0.49.0
+
+## New Features
+- Build barcode package for Linux (x86_64+arm64), re-enable cross-platform tests
+- Build barcode package for Windows (x64+arm64)
+- Build barcode package for macOS (arm64+x86_64)
+- Add Barcode.bui wrapper (Symbologies, Options, Encode)
+- Add barcode package native shim (Zint + stb_image_write)
+
+## Bug Fixes
+- Copy barcode sample into examples/ and correct QR comment
+- Guard oversized barcode payloads and silent Nil PNG decode
+- Correct barcode.bui sample Expected comments to match real output
+- Retype barcode Declare params to Int32/UInt8 to fix ARM64 crash
+- Flatten nested classes in Barcode.bui, fix Double->Integer CType misuse
+- VSCode auto-indent recognizes SyncLock as a block keyword
+- Buoy-lsp never publishes diagnostics for vendored .buoy/packages/ files
+- VSCode indentation - case-insensitive keywords, bidirectional Else/Case/Catch/Finally, drop ambiguous Property
+- VSCode auto-indent recognizes all block constructs, not just a handful
+- Exclude preproc_error_warning from Windows remote CI, Error-on-Windows is by design
+- Remove stale loose fluenticons directory before writing sealed buipkg
+- Exclude delegates_ffi from Windows remote CI, SIGUSR1 has no equivalent there
+- Exclude 4 known-affected tests from windows_arm64_remote CI lane
+- Toolbar.AddCustomView after attachment no longer corrupts widget lifetime on Linux
+- Remove dimming on build graph nodes pending dependency
+
+
+---
+
 # v0.48.0
 
 ## New Features
