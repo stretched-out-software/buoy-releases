@@ -1,3 +1,19 @@
+# v0.51.0
+
+## New Features
+- Make Picture.Scale writable (#376)
+- Bug-triage posts as buoy-triage-bot GitHub App; add not-a-bug confirmation gate
+- Add FileSystemItem.Permissions for POSIX-style rwx bits
+
+## Bug Fixes
+- Locale.Current() no longer crashes on unrecognized OS locale identifiers (#374)
+- Bump @hono/node-server to 1.19.17 (alert #45) (#372)
+- LSP Shared Property completion; scope Picture.ImageFormat; VSCode word-suggest default
+- Avoid node --test glob arg, Node 20 CI doesn't support it
+
+
+---
+
 # v0.50.0
 
 ## New Features
