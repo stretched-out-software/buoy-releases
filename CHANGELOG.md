@@ -1,3 +1,25 @@
+# v0.52.0
+
+## New Features
+- Add EndOfLine platform line-ending constants (#378)
+
+## Bug Fixes
+- Linux Graphics.DrawPicture swaps red/blue and drops alpha for loaded Pictures (#389)
+- Windows ServerSocket uses SO_EXCLUSIVEADDRUSE instead of SO_REUSEADDR (#388)
+- Give each Windows/Linux remote test lane its own staging directory (#387)
+- Enable Windows stack probes for vendored Zint (barcode PDF417/Aztec crash) (#386)
+- Harden getQueueInitFn's POSIX guard with CAS + memory ordering (#385)
+- Standalone_cache_isolation asserts on the wrong -v line (#384)
+- Windows picture blitting drops per-pixel alpha (#383)
+- MacOS MenuBar intermittently empty on launch (#382)
+- LSP resolves package-qualified Import against .buoy/packages/ (#381)
+- File.Exists fails to link on both Windows targets (#380)
+- Uncaught-exception fallback reports real type/message/code (#379)
+- Build expected paths with path.join in vscode stepType tests (#377)
+
+
+---
+
 # v0.51.0
 
 ## New Features
