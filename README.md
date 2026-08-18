@@ -61,8 +61,8 @@ Buoy produces and runs applications on:
 | Platform | Minimum target                                  | Native UI toolkit |
 |----------|-------------------------------------------------|-------------------|
 | macOS    | macOS 12 (Monterey), Apple Silicon or Intel     | AppKit            |
-| Windows  | Windows 10 22H2, x64 or ARM64                   | comctl v6         |
-| Linux    | A distro providing GTK 4.10+ (e.g. Ubuntu 22.04, Fedora 38, Debian 12) | GTK 4 |
+| Windows  | Windows 10, x64 or ARM64                        | comctl v6         |
+| Linux    | A distro providing GTK 4 (e.g. Ubuntu 22.04, Fedora 38, Debian 12) | GTK 4 |
 
 Universal macOS binaries (Apple Silicon + Intel in one bundle) are supported. On Windows and Linux, ARM64 and x64 are shipped as separate builds.
 
@@ -145,7 +145,7 @@ A toolchain install contains everything needed to compile for every supported ta
 - Per-target SDK stubs, so the linker is satisfied without a full platform SDK.
 - An AI coding kit (`ai/`) — run `buoy ai init` in a project to set up your AI assistant for Buoy. It installs a condensed syntax reference with an automatic compiler-verification step, a code-review agent, and instruction files for Claude Code, GitHub Copilot, Cursor, and other tools, plus an MCP server that gives MCP-capable assistants live compile diagnostics and keyword search over the installed documentation. (Also available from VSCode: **Buoy: Set up AI assistant**.)
 
-The complete cross-target toolchain is well under 100 MB.
+The complete cross-target toolchain, bundling pre-built runtimes for every supported platform plus the VSCode extension and AI coding kit, is a few hundred MB.
 
 ---
 
@@ -153,9 +153,7 @@ The complete cross-target toolchain is well under 100 MB.
 
 Buoy is being built in stages. Broad direction, subject to change:
 
-- **Now:** the compiler, language server, and per-platform native runtimes; a full object-oriented language with generics, async/await, optional chaining, file I/O, date/time, and HTTP/HTTPS networking built in; compile-time-marshaled SQLite database access — mark a class `@DatabaseRecord` and query/insert/update it directly, no manual row-mapping code.
-- **Next:** the `.buipkg` library-packaging format so plugin authors can ship first-class bindings; a visual layout editor.
-- **Later:** automated binding generation from native headers, richer debugger features (watches, conditional breakpoints), and distribution through OS package managers.
+- **Now:** the compiler, language server, and per-platform native runtimes; a full object-oriented language with generics, async/await, optional chaining, file I/O, date/time, and HTTP/HTTPS networking built in; compile-time-marshaled SQLite database access — mark a class `@DatabaseRecord` and query/insert/update it directly, no manual row-mapping code; the `.buipkg` library-packaging format, with first-party packages already shipping (crypto, zip, PDF, barcode, SQLite, Postgres, XML, YAML, regex, and more); a visual layout editor in the VSCode extension.
 
 Dates are not promised; follow the releases for what has actually shipped.
 

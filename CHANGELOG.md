@@ -1,3 +1,28 @@
+# v0.53.0
+
+## New Features
+- Add pdf package sample, unit test, and CMake registration
+- Implement PDFPage and PDFGraphics (Implements IGraphics)
+- Rework pdf package to shim-based float-narrowing design (Task 4)
+- Add libharu vendor scripts (Linux + Windows cross targets)
+- Add PDF.bui Declares, error handling, and PDFDocument core
+- Add pdf package scaffolding (libharu shared build, all 6 targets)
+- Add libharu vendor scripts (macOS arm64 + x86_64)
+- Add libpng vendor scripts (Linux + Windows cross targets)
+- Add libpng vendor scripts (macOS arm64 + x86_64)
+- Add cross-platform DisclosureTriangle control (#390)
+- Add IGraphics interface for backend-agnostic drawing routines
+
+## Bug Fixes
+- Installers kill stale buoy-lsp/buoy-dap before overwriting binaries
+- Correct PDFGraphics rendering and FFI int widths in the pdf package
+- Nil-check Picture.ToPNG() result in PDFGraphics.DrawPicture
+- Plug malloc leak on ToBytes() error path in PDF.bui
+- Switch PDF.bui page-size Declares to bui_pdf_* shim (Task 5 rework)
+
+
+---
+
 # v0.52.0
 
 ## New Features
