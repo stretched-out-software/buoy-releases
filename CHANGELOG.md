@@ -1,3 +1,34 @@
+# v0.54.0
+
+## New Features
+- Add FileType language declaration (#396)
+- Emit Inno Setup .iss registry fragment for FileType blocks on Windows
+- Emit CFBundleDocumentTypes/UTExportedTypeDeclarations for FileType blocks
+- Add FileType sample, unit test, and documentation
+- Add AddFilter(fileType As FileType) overload to OpenFileDialog/SaveFileDialog
+- Desugar FileType blocks into synthesized zero-arg constructor functions
+- Validate FileType block fields in Sema
+- Parse FileType top-level block declarations
+- Add FileType keyword token
+- Add stdlib FileType class and FileKind/FileTypeRole/FileTypeRank enums
+- Locale.Current() takes a fallback parameter for the last-resort locale
+
+## Bug Fixes
+- Stop shipping internal ctest fixture packages in installers (#397)
+- Stop shipping internal ctest fixture packages in installers
+- Locale.Current() recovers real base locale instead of downgrading to en-US (#395)
+- Address final-review findings — FileType script injection, plist/case bugs, test coverage
+- Emit MimeType= and shared-mime-info XML for FileType blocks on Linux; fix .desktop gating for FileType-only projects
+- Guard optional FileType plist keys against empty-value emission
+- FileType desugar — Name falls back to block identifier, Icon resolves eagerly
+- Locale.Current() reads native OS state instead of resolving an identifier
+- Locale.Current() recovers from macOS Region Override's @rg= modifier
+- Locale.Current() recovers the real base locale instead of downgrading to en-US
+- Locale.Current() no longer crashes on unrecognized OS locale identifiers
+
+
+---
+
 # v0.53.0
 
 ## New Features
