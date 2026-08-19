@@ -1,3 +1,24 @@
+# v0.54.1
+
+## Bug Fixes
+- Vendored zlib/libpng symbols no longer leak from pdf/zip packages (#404)
+- If() ternary unifies Nil with reference types (#403)
+- MacOS Graphics.DrawPicture renders vertically flipped (#402)
+- Copy Resources build step supports single-file sources (#401)
+- Select Case FCmp verifier failure on Double/Boolean selectors (#400)
+- Vendored zlib/libpng symbols no longer leak from pdf/zip packages
+- If() ternary unifies Nil with reference types
+- MacOS Graphics.DrawPicture renders vertically flipped
+- Copy Resources build step supports single-file sources
+- Select Case FCmp verifier failure on Double/Boolean selectors
+- Indent FileType block bodies in LSP formatter (#399)
+- Indent FileType block bodies in LSP formatter
+- Strip CRLF from package name in Windows installer staging (#398)
+- Strip CRLF from package name when staging Windows installers
+
+
+---
+
 # v0.54.0
 
 ## New Features
