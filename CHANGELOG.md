@@ -1,3 +1,21 @@
+# v0.55.0
+
+## New Features
+- Sink-only Run/Debug connectors, edge hit-area, hover, and arrowheads
+- Run Run/Debug through the build graph with chain-rooted output dirs
+- Add isSinkOnly predicate for Run/Debug edge validation
+- Add load-time migration for backward Run/Debug edges
+- Add chain-rooted build output directory resolution for Run/Debug
+
+## Bug Fixes
+- Rebuild an ancestor whose cached 'success' status no longer matches disk
+- Sign step auto-resolves the built binary instead of requiring manual path entry
+- Sign step errors on a blank path instead of signing the build output folder
+- Save dirty docs, avoid stale-status skip across chain roots, and fix output-clobber in graph Run/Debug
+
+
+---
+
 # v0.54.1
 
 ## Bug Fixes
