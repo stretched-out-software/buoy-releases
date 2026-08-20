@@ -1,5 +1,14 @@
 # v0.55.1
 
+## Changes
+- Build Graph: add Build sink endpoint, allow dragging edge endpoints to rewire
+- Build Graph: show Copy Resources source/destination and Run Script's path
+- Build Graph: work with a single open file, no workspace required
+- Build Graph: fix edge endpoint drag handle visibility and hover behavior
+- Sign step: clear extended attributes before codesign
+- Run Script step: respect quoted strings in the Arguments field
+- Warn when a project's package version differs from buoy's bundled copy
+
 
 ---
 
