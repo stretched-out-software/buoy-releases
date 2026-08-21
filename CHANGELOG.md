@@ -1,3 +1,63 @@
+# v0.56.0
+
+## New Features
+- Nesting-aware End Handle scanner with per-control degradation
+- Preserve inline Handle blocks as keyed opaque spans
+- Badge and list inline Handle blocks in the layout editor
+- Warn before deleting a layout control that owns inline Handle code
+- Report inline Handle spans in buoy/layoutOutline and degrade per-control on a broken body
+- Lower window-level inline Handle blocks into the lowered Window class
+- Diagnose bad inline Handle blocks in Window Control bodies
+- Lower control-level inline Handle blocks into the synthesized <control>_<Event> hook
+- Accept inline Handle blocks in Window/View bodies; share one Handle parser
+- Add constraint reattach-drag and delete-via-trash
+- Add inline relation/offset/priority editor popover
+- Add anchor hit-targets and create-drag targeting engine
+- Add constraint-drag axis/targeting/text-generation logic module
+- Add scrollable zoomable canvas viewport with a zoom control
+- Add zoom math pure-logic module for the layout editor
+- Add Preview Constraints toggle with per-workspace persistence
+- Render constraint preview lines and anchor dots in the layout editor
+- Add constraint-overlay geometry/label logic module
+- Decompose Constraints-line relation/priority/RHS into buoy/layoutOutline
+
+## Bug Fixes
+- Resized/ScaleFactorChanged firing during Window construction crashes on unbuilt siblings
+- Stop the layout editor's handler badge from being clipped
+- Preserve blank lines and comments inside Handle bodies
+- Don't false-positive resync on bare-word statements that aren't block openers
+- Correct misleading comment about handler signature validation
+- Re-render on zero-movement selection click (#418)
+- Re-render after zero-movement guard so selection still refreshes the view
+- Apply the same zero-movement guard to multi-select and window-resize drags
+- Selecting a constrained control no longer flattens its relative constraints to absolute pins
+- Drop BaselineAnchor from the selected-control anchor-dot list
+- Layer constraint overlay paint order, widen center-anchor fan offset, guard axis-less endpoint handles, and fix drag-preview cleanup/trash positioning
+- Copy Resources nests into .app Contents, forces overwrite (#415)
+- Paint anchor hit-targets under constraint endpoint handles; preserve Medium/Low priority on untouched reattach
+- Build graph persist no longer races an open buoy-build-graph.json editor tab
+- Correct Enter-on-Cancel and popover cleanup on external re-render
+- Copy Resources nests into .app Contents, forces overwrite
+- Fan CenterX/CenterY anchor dots apart, scale snap radius by zoom
+- Preserve canvas-viewport scroll position across re-renders
+- Keep resize handles and anchor dots a constant size across zoom levels
+- Make drag/resize pointer math zoom-aware
+- Correct zoom-anchored scroll padding offset and isolate floating buttons from scroll
+- Anchor overlay to unresolved-control placeholder geometry, add markers for constant/unstructured constraints
+- Correct RHS-selected constraint lines, case-insensitive frame lookups, and dimension-bracket hover/label/fan-out
+
+## Changes
+- Fix Resized/ScaleFactorChanged crash during Window construction (#420)
+- Inline Handle blocks in declarative Window blocks (#419)
+- Add inline-Handle Window block sample and unit test
+- Selecting or clicking a constrained/multi-selected control flattens or duplicates its constraints (#417)
+- Layout editor: drag-and-drop constraint creation and editing (#416)
+- Layout editor: zoom and pan (#414)
+- Constraint preview in the layout editor (#411)
+
+
+---
+
 # v0.55.1
 
 ## Changes
