@@ -42,7 +42,7 @@ Documentation comments use a triple apostrophe and attach to the declaration tha
 ```basic
 ''' Returns the area of a circle with the given radius.
 Function Area(r As Double) As Double
-    Return Pi * r * r
+    Return Math.Pi * r * r
 End Function
 ```
 

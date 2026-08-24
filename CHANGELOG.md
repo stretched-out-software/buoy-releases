@@ -1,3 +1,76 @@
+# v0.57.0
+
+## New Features
+- Add Help button for layout editor hotkeys (#436)
+- Add Help button for layout editor hotkeys
+- Add Project Type build setting (Automatic/Console/Desktop) (#432)
+- Add Project Type build setting (Automatic/Console/Desktop)
+- Strip spaces from hex-formatted Developer Identity on blur
+- Add Windows Tab-key handling (IsDialogMessage) and TabPressed suppression
+- Add TabPressed event with macOS/Linux native suppression
+- Focus position 0 on Window.Show/ShowModally
+- Two-tier focus relocation on Focusable/Visible/Enabled/page-switch
+- TabView/PagePanel/Splitter effective-focusability filtering - WIP
+- Synthesize native focus chain from Window.mTabOrder
+- Add FocusIndex, Window tab order list, InsertTabOrderAfter/Before
+- Add UIControl.HasFocus query property
+
+## Bug Fixes
+- Nest CheckState inside Checkbox instead of global scope (#440)
+- Nest CheckState inside Checkbox instead of global scope
+- Native baseline chrome + TextControl font-push (follow-up to #438) (#439)
+- Push TextControl.FontName/FontSize to the real native control
+- Compute baseline from real native control chrome, not font math alone
+- Baseline anchor layout uses real per-platform font metrics (#438)
+- Wire real per-platform bridges into Baseline anchor layout
+- Autosave stripped Developer Identity; reuse it in the Sign step (#435)
+- Autosave stripped Developer Identity; reuse it in the Sign step
+- Pass mac Developer Identity to Run/Debug compiles (#434)
+- Pass mac Developer Identity to Run/Debug compiles
+- Reject Secure prefs calls on unsigned builds (E210) (#431)
+- Reject Secure prefs calls on unsigned builds (E210)
+- TextField/TextArea FocusGained now fires on keyboard Tab (#429)
+- TextField/TextArea FocusGained now fires on keyboard Tab
+- Build Graph Sign step now runs after the compile it's wired to (#428)
+- Linux TabView teardown double-free / SIGBUS (#425)
+- Build Graph Sign step now runs after the compile it's wired to
+- Linux TabView teardown double-free / SIGBUS
+- MacOS secure-prefs hangs/crashes across rebuilt-binary Keychain identities (#424)
+- MacOS secure-prefs hangs/crashes across rebuilt-binary Keychain identities
+- Tab strands focus instead of advancing (missing WS_EX_CONTROLPARENT + tab-order registration race)
+- ComputeRelocationTarget must exclude the whole departing subtree, not just focused
+- Tab-order commit does minimal z-churn instead of hoisting to top
+- Tab-order key-view chain wraps and never messages a closed window
+- TabView sync/slot/relocation-order/registration/self-anchor bugs (§31 review)
+- Cross-platform tab-order effective-focusability bugs on Linux/Windows
+- HasFocus is a Function, not a Property, in tab-order.md
+- Stop IsEffectivelyFocusable's page-selected check from skipping the container's own Visible/Enabled
+- Exclude Window's on-screen-shown state from IsEffectivelyFocusable
+- Change tab-order helpers from Public to Internal visibility
+- Remove tautological assertion in tab-order test
+- Install git-lfs on release runner before checkout (#421)
+- Install git-lfs on release runner before checkout
+
+## Changes
+- Rebuild Linux libbuoy_layout.so with the Baseline anchor fix
+- Strip VB/Xojo/Basic references from buoy ai init output (#437)
+- Strip VB/Xojo/Basic references from buoy ai init output
+- Skill for cleaning up branches and worktrees
+- Regression coverage for space/umlaut paths in Copy Resources (#433)
+- Strip spaces from hex-formatted Developer Identity on blur (#430)
+- Regression coverage for space/umlaut paths in Copy Resources
+- Native regression guard for macOS secure-prefs cross-identity read hang (#427)
+- Merge remote-tracking branch 'Github/main' into fix/macos-secure-prefs-read-hang-test
+- Native regression guard for macOS secure-prefs cross-identity crash (#426)
+- Native regression guard for macOS secure-prefs cross-identity read hang
+- Native regression guard for macOS secure-prefs cross-identity crash
+- Tab Order and Focus Traversal (core) (#423)
+- Docs+test(ui): tab-order documentation, sample, and CMake registration
+- Cover IsDescendantOrSelf and the Focusable=True append path
+
+
+---
+
 # v0.56.0
 
 ## New Features
