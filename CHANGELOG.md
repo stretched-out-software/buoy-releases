@@ -28,6 +28,36 @@
 
 ---
 
+# v0.58.0
+
+## New Features
+- Redesign layout editor constraint visualizer
+- Draft editable release notes, gate release: commits on them
+- Stamp a build-number 4th component into the macOS installer version
+- Constraints block completion for control names and anchor properties
+- Autocomplete control names and anchor properties in Constraints blocks
+- Allow Delegate declarations nested inside a Class
+- Add System.IsDarkMode cross-platform dark-mode detection
+
+## Bug Fixes
+- Stop Interface Sub/Function signatures from growing indent
+- Dedupe changelog/release-notes lines from squash-merge suffix
+- Canvas no longer swallows Tab forever once focused (macOS + Linux)
+- Build macOS bundles and Windows/Linux exes in temp dir, atomic move into place
+- Build macOS bundles and Windows/Linux exes in a temp dir, then atomically move into place
+- Don't suppress user Quit/Hide menu shortcuts on macOS
+- Route Build/Run/Debug commands through the Build Graph
+- Detect mid-line Lambda/Block literals in document formatter
+- Indent Lambda/Block bodies and outdent End lines
+- Indent Lambda/Block bodies and outdent their End lines
+- Stop UIControl Lock* properties crashing on a second same-axis lock
+- Clamp window resize to Auto Layout constraints
+- Control's own Handle override no longer shadowed by declarative Window control block
+- Rebuild an ancestor whose cached 'success' status no longer matches disk
+
+
+---
+
 # v0.57.0
 
 ## New Features
