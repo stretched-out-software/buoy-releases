@@ -1,3 +1,30 @@
+# v0.59.0
+
+## New Features
+- Add a control context menu for stacking order
+- Add Inspector editing for the highest-impact property on each control
+- Render visual control skins in place of wireframe boxes
+- Add per-control-type visual skin spec builder
+- Report declared control properties in layout outline
+
+## Bug Fixes
+- Dragging a constrained control no longer changes its target
+- Deleting a control no longer leaves dangling Constraint references
+- Prevent circular Constraint dependencies from drag, and keep a control's lines grouped together
+- Dependent controls follow a drag, and anchor-drag no longer duplicates existing lines
+- View wireframe rendering, Constraints list visibility, and Frame/Constraints conflict prevention
+- Right-click on a control no longer starts a drag
+- Address 4 issues found in Task 4 manual verification
+- Address whole-branch review findings for layout editor skins
+- Use JSON array of pairs for properties to preserve order
+- Preserve property declaration order and add documentation
+
+## Changes
+- Layout editor: visual control rendering, property editing, stacking order
+
+
+---
+
 # v0.58.0
 
 ## New Features
