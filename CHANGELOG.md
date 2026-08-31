@@ -1,3 +1,20 @@
+# v0.60.0
+
+## New Features
+- Add GroupBox - titled, bordered container control
+- Add GroupBox — titled, bordered container control
+
+## Bug Fixes
+- Prune nested git checkouts from app_resources.json manifest discovery
+- Windows Picture no-SVG fallback build now links
+- Add fmod to Apple/Windows curated link stubs
+- Canvas Paint drawing now clips to the canvas's own bounds
+- Windows native controls no longer ignore per-monitor DPI for text
+- BaselineAnchor-only controls no longer render as unresolved
+
+
+---
+
 # v0.59.0
 
 ## New Features
