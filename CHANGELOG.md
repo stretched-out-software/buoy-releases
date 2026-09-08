@@ -1,3 +1,52 @@
+# v0.61.0
+
+## New Features
+- Right-click keyword help, resolving local docs or falling back to the website
+- Add FileSystemItem.IsVisible
+- Add shared BuiltinMethodInfo table for String/Array builtin methods
+
+## Bug Fixes
+- Dispatch MenuSelected for items added after MenuBar.AddMenu
+- Dispatch MenuSelected for items added after MenuBar.AddMenu; fix macOS Enabled ignored by native menu
+- Include buoy-dap/buoy-debugstub in the single-arch darwin-universal fallback
+- Correct breakpoint source-path casing before resolving against DWARF
+- Correct import path casing so DWARF file names match the filesystem
+- Correct import path casing so DWARF file names match the real filesystem
+- Bump qs to 6.16.0 in editors/vscode (alerts #51, #55)
+- Bump qs to 6.16.0 in editors/mcp (alerts #50, #52)
+- Bump fast-uri to 3.1.6 in editors/vscode (alerts #46, #48, #56, #57)
+- Bump fast-uri to 3.1.6 in editors/mcp (alerts #47, #49, #53, #54)
+- Windows Canvas text centering/HiDPI scaling + ~42% oversized default control font
+- Windows Canvas text no longer mis-centered/oversized on HiDPI, and every control's default font no longer 42% too large
+- Catch remaining kiwi edit-variable exceptions in ConstraintSolver
+- Catch kiwi::DuplicateConstraint and avoid CRT stdio in ConstraintSolver
+- Stop scrub-dev-paths.py from silently disabling Windows/Linux cross-link archives
+- Stage Linux cross-arch regex/PCRE2 archives in package.sh
+- Strip extended attributes from app bundle before codesigning
+- Stage Windows cross-arch regex/PCRE2 archives for package.sh
+- Stage Windows cross-arch regex/PCRE2 archives in package.sh
+- Avoid literal {app} inside a brace-delimited Pascal comment
+- Fall back to a writable directory when Run/Debug/Build can't write into the project
+- Remove stale files from upgraded component directories
+- Stage x86_64 cross-arch regex/TLS archives for universal-darwin
+- Stage x86_64 cross-arch regex/TLS archives for universal-darwin builds
+- Name the offending control in kiwi unsatisfiable-constraint warnings
+- Sign step errors clearly when its target does not exist
+- Sign step errors clearly when its target doesn't exist
+- Complete String and Array builtin methods for VSCode autocomplete
+- Implement Array.IsEmpty end-to-end; derive Sema whitelist from shared table
+
+## Changes
+- Add regression test for client-supplied breakpoint path casing
+- Move SpecialFolderDomains enum into System.FolderDomains
+- Right-click keyword help (local docs or website fallback)
+- :fix: updating the distributed learning docs with fixed versions
+- :fix: updating learning references based on latest builds
+- Fix String/Array builtin methods missing from VSCode autocomplete
+
+
+---
+
 # v0.60.0
 
 ## New Features
