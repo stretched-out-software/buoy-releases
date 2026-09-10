@@ -1,3 +1,28 @@
+# v0.62.0
+
+## New Features
+- Insert Code boilerplate command
+- Return FileSystemItem from OpenFileDialog/SaveFileDialog/SelectFolderDialog
+- Register buoy.insertCode command and context menu entry
+- Add Event Handler / Override Method snippet builders
+- Add static boilerplate snippet builders for buoy.insertCode
+- Wire buoy/handleEventsAt and buoy/overridableMethodsAt
+- Add Workspace::insertableHandleEventsAt
+- Add Workspace::overridableMethodCompletionsAt
+
+## Bug Fixes
+- Replace stale-version RELEASE_NOTES.md even with hand edits
+- Patch vendored LLVM for Xcode 27's arm64e.x1 TAPI stubs
+- Autocomplete class-scoped nested enums (e.g. Checkbox.CheckState)
+- Offer window-level Handle events for cursor in Window block body
+- Exclude synthesized event slots and Private methods from Override picker
+
+## Changes
+- Return FileSystemItem from file dialogs
+
+
+---
+
 # v0.61.0
 
 ## New Features
