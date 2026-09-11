@@ -1,3 +1,21 @@
+# v0.62.1
+
+## Bug Fixes
+- Honor an absolute sourcePath in the Copy Resources build step
+- Resolve GroupBox/RadioButton declarative Control block failures
+- Actually invoke aws to confirm it works, not just command -v
+- List raw object keys instead of delimited CommonPrefixes in s3-artifact-download
+- Filter aws-cli's literal None text output in s3-artifact-download
+- Filter aws-cli's literal "None" text output in s3-artifact-download
+- Stop silencing list-objects-v2 stderr in s3-artifact-download
+- Check aws.cmd not just aws.exe on Windows, --update the Linux installer
+- Bypass pip broken extension-less aws shebang script on Windows
+- Fix pip Scripts-dir path on Windows, add pip-less fallback for Linux
+- Install AWS CLI on demand in s3-artifact actions
+
+
+---
+
 # v0.62.0
 
 ## New Features
