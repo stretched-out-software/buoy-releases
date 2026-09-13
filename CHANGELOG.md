@@ -1,3 +1,51 @@
+# v0.63.0
+
+## New Features
+- Set minimum supported Windows version to 10.0.19045 in installer
+- Apply dark chrome to ProgressBar, Slider, Stepper, DateTimePicker
+- Native dark chrome for Button on Windows via uxtheme
+- Draw a themed border around TabView's pane on Windows
+- Theme-aware Toolbar item text color on Windows
+- Theme-aware colors for ListBox/Splitter/GroupBox/Canvas/TabView/HtmlView on Windows
+- Theme-aware Label/TextField/TextArea/ComboBox colors on Windows
+- Dark title bar on Windows, live-updating on OS theme change
+- Add shared Win32 dark/light theme module (unused yet)
+- Show and edit GroupBox Caption in the Layout Editor
+
+## Bug Fixes
+- Revert DateTimePicker dark-mode diagnostic to simpler unconditional CFD chrome
+- Windows quits on any window close, not just the last
+- Only quit on Windows when the last window closes
+- Revert TabView and TextArea dark-theme experiments
+- Revert Button dark-mode chrome to DarkMode_Explorer
+- Give toolbar SearchField creation-time dark chrome; keep ProgressBar visual-style opt-out dark-mode-only
+- Theme-aware chrome for RadioButton/TextField/DateTimePicker; ProgressBar via explicit colors
+- Re-theme TextArea scrollbar chrome on live dark/light toggle
+- Keep Windows DisclosureTriangle's glyph at native size
+- Use DarkMode_CFD theme class for ComboBox chrome
+- Dark-theme TextArea's native scrollbar on Windows
+- Re-theme already-created Windows controls on live OS theme toggle
+- Apply dark chrome to Checkbox/ComboBox/TabView, mute DisclosureTriangle glyph
+- Recolor Toolbar icons in dark mode; fix README Button wording
+- Correct uxtheme ordinal-135 dispatch, app-mode init order, and chrome-apply call site
+- Dark-mode toolbar legibility + WM_SYSCOLORCHANGE + comment fixes
+- Fill TabView pane area with theme brush in dark mode
+- Convert tabview page frame from physical to logical DPI units
+- Give windows-dark-mode's TabView page a control so it realizes
+- Make GroupBox's default BorderColor theme-aware
+- Render GroupBox's Layout Editor skin like the real widget
+
+## Changes
+- Full dark-mode theming (title bar + controls)
+- Opt DateTimePicker's date field out of visual styles in dark mode
+- Sync user's expanded windows-dark-mode sample with indeterminate ProgressBar
+- Try DarkMode_CFD for TabView's tab-strip theming
+- Add a second declarative-syntax window to windows-dark-mode
+- Add cross-platform dark-mode visual sample
+
+
+---
+
 # v0.62.1
 
 ## Bug Fixes
