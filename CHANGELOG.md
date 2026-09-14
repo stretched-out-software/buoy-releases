@@ -1,3 +1,16 @@
+# v0.63.1
+
+## Bug Fixes
+- Windows dark mode for menu bar, popup menus, and RadioButton captions
+- Skip redundant native measure pass on live resize ticks
+- Document cross-referenced members missing from their owning class's docs
+
+## Changes
+- Windows dark mode: menu bar, popup menus, and RadioButton captions
+
+
+---
+
 # v0.63.0
 
 ## New Features
