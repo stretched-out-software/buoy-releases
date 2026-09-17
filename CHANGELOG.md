@@ -1,3 +1,61 @@
+# v0.64.0
+
+## New Features
+- Nested-control Constraints support (View/GroupBox/RadioGroup/Splitter)
+- Replace flat-solve editor preview with real per-container recursive solve
+- Sema support for nested-control Constraints (parent+sibling scope, SafeArea rewrite, Splitter pane routing)
+- Add Splitter.AddSubview, one pane per direct nested child
+- Build RadioGroup ContentArea/SafeArea and Constraints support from scratch
+- Wire GroupBox.ContentArea/SafeArea via inherited View helper
+- Add View.ContentArea/SafeArea for nested-control constraints
+- Attach a palette-dropped control directly into a container
+- Splice a control's source block between parents on reparent
+- Hit-test and reparent existing controls during drag
+- Render nested layout-editor controls inside their parent's box
+- Add pure containment/hit-test geometry for control attachment
+- Report parentName for nested layout-editor controls
+- Bundle buoy-debugstub + lldb-server for all six targets
+- Attach to an already-running remote buoy-debugstub via target
+
+## Bug Fixes
+- Scope lldb-server lookup in package.sh to the arch being staged
+- Remove duplicate nested-constraint gtest definition and fix parent-origin double-subtraction
+- Stop double-subtracting parent origin from nested constraint solves
+- Remove duplicate nested-constraint gtest definition breaking package.sh
+- Layout editor mispositions and blocks selecting nested constraint-solved controls
+- Close GroupBox's exposure to the WireContentAndSafeArea thin-container gap
+- LSP editor preview applies the per-container SafeArea gap inset
+- Accurate diagnostic for a top-level LHS referencing a nested RHS
+- Cascade Layout() through every nesting level, not just the top ancestor
+- Make View.AddSubview(ctrl As UIControl) Internal, not Public
+- Gate View/RadioGroup WireContentAndSafeArea behind lazy-getter touch
+- Decouple nested-control-constraints test from Window.SafeArea
+- Move View.WireContentAndSafeArea() before layout solve
+- Complete #If/#ElseIf autocomplete for Target predicates and #Define symbols
+- Re-indent a control's source block on reparent
+- Harden writeReorderControlsEdit's permutation guard against duplicates
+- Give every nested Control block a real, grabbable Frame (I5)
+- Correct nesting-unaware layout-editor consumers (C1/I2/I3/I4/M6/M9)
+- Clear drop-target highlight unconditionally and dedupe controlMode derivation
+- Route ordinary Frame-governed drags through attach/detach, not commitGesture's dead frame fallback
+- Restore pointer-events/positioning for nested GroupBox/TabView controls
+- Set parentName in controlOrdering.test.ts makeControl helper
+
+## Changes
+- Regression coverage for the final fix wave (Fix 1, 2/3, 6)
+- Confirm StackView/TabView/PagePanel non-goal stays a clean compile error
+- Complete #If/#ElseIf autocomplete for Target predicates and #Define symbols
+- Layout editor: drag attach/detach + palette-drop into container (3/3)
+- Layout editor: render nested controls + hit-test geometry (2/3)
+- Layout editor: plumb parentName for nested controls (1/3)
+- Fix macOS debug-stub to ship as a universal (arm64+x86_64) binary
+- Remove File namespace; fold text I/O into FileSystemItem
+- Attach to a remote buoy-debugstub, and bundle debug stubs for release
+- Remove File namespace, fold ReadAllText/WriteAllText/AppendAllText into FileSystemItem
+
+
+---
+
 # v0.63.1
 
 ## Bug Fixes
