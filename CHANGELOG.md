@@ -1,3 +1,14 @@
+# v0.65.0
+
+## New Features
+- Constraint overlay follows the dragged control live
+
+## Bug Fixes
+- Layout editor orphaned constraints, GroupBox caption offset, SafeArea inset
+
+
+---
+
 # v0.64.0
 
 ## New Features
