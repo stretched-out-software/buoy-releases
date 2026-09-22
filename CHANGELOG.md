@@ -1,3 +1,22 @@
+# v0.66.0
+
+## New Features
+- Add Menu.Caption so MenuNeedsUpdate can identify the opening menu
+- Layout editor duplicate (Cmd-D, Option-drag) and copy/cut/paste
+
+## Bug Fixes
+- Resolve vendored GTest_DIR before frontend/ is configured
+- Bump hono to 4.13.8 (alerts #58, #59, #60)
+- Bump js-yaml to 4.3.2 (alert #61)
+- Bump js-yaml to 4.3.2 (alert #61, GHSA-2883-xcg3-v3hh)
+- Lower Frame and Lock* in Window blocks to layout constraints
+
+## Changes
+- Failing test and sample for Frame/Lock* layout in Window blocks
+
+
+---
+
 # v0.65.0
 
 ## New Features
