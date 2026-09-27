@@ -1,3 +1,52 @@
+# v0.67.0
+
+## New Features
+- UDP autodiscovery for fileservice-buoy + fsdiscover companion app
+- Add NetworkInterface.BroadcastAddress
+- Fileservice-buoy protocol parity with the Xojo fileservice, sandboxed paths, service install docs
+- Bring fileservice-buoy to protocol parity with the Xojo fileservice
+- Add << / >> bitwise shift operators
+- MacOS application menu hook (Application.AppMenu) and About override (Application.AboutRequested)
+- Add AppMenu/AboutRequested sample
+- Add AppMenu/About ABI stubs for Windows and Linux
+- Add Application.AppMenu and AboutRequested (macOS app menu hook)
+
+## Bug Fixes
+- Loop-scoped Dim/Const starts from Nil every iteration
+- GroupBox children no longer inset twice on Linux
+- Layout editor GroupBox content inset now matches the native runtime
+- VSCode Debug honors launch.json cwd/args/env; Run uses the workspace folder
+- Log service output under the service's own name, not "BuoyService"
+- Windows crash (0xC0000005) tearing down a Window whose MenuBar holds a Menu
+- Hide "Buoy: Open Layout Editor" from the Command Palette
+- Windows outputs always end in .exe/.dll; import .lib named after the DLL
+- Window programs fail to link on Windows/Linux (missing bui_ui_window_set_on_closing)
+- Layout editor view shifts 1px on select/deselect
+- Layout editor canvas/controls shift 1px on select/deselect
+- Window native property setters use-after-close on macOS; add Window.Closing event
+- Guard native Window property setters against use-after-close on macOS; add Window.Closing event
+- Address final whole-branch review findings in AppMenu
+- Address use-after-free and shortcut-collision review findings in AppMenu
+
+## Changes
+- Loop-scoped Dim/Const must start from Nil every iteration (failing)
+- GroupBox children must be inset exactly once on every platform (failing on Linux)
+- GroupBox editor/solver content inset must match native runtime (failing)
+- Merge remote-tracking branch 'Github/main' into fix/vscode-debug-cwd-launch-setting-never-honored
+- Service log identity must follow the service's own name (red)
+- Debug/run launches must honor cwd (and launch.json args/env) (red)
+- Run menubar_test on every platform via UNIT_TESTS
+- Window + MenuBar with a Menu must not crash on Windows (red: 0xC0000005 on x64/arm64)
+- Buoy.openLayoutEditor must be hidden from the Command Palette (red)
+- --library import .lib must be named after the DLL (red: hidden .<stem>.lib)
+- Windows outputs must end in .exe/.dll (red: a.out default, no extension appended)
+- Add runtime_exports_in_sync check (red: bui_ui_window_set_on_closing missing)
+- Nest TextAlignment enum on TextControl
+- Add failing Application.AppMenu/AboutRequested test
+
+
+---
+
 # v0.66.0
 
 ## New Features
