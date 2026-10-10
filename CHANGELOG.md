@@ -1,3 +1,58 @@
+# v0.68.0
+
+## New Features
+- Layout editor treats panels with sections as opaque
+- Outline flags panels with sections; Tab/Page completion
+- Lower Tab/Page sections to AddTab/AddPage
+- Parse Tab/Page sections inside Control bodies
+- Layout round-trip modules drop inline handler spans; Handle in a layout is refused
+- Layout editor no longer carries inline handlers
+- Reject inline Handle in Window/View layouts; drop handler extents from the outline
+- With-handler polish — hover/definition on control name, outline, modifier and empty-layout diagnostics
+- LSP completion for With <control> handler blocks
+- Validate and lower With <control> handler blocks
+- Parse With <control> handler blocks in class bodies
+- Derived class may reuse a base class's Private property name
+- @Hidden attribute hides Perform* test hooks from autocomplete
+- @Hidden attribute hides Public members (Perform* test hooks) from autocomplete
+
+## Bug Fixes
+- Tab = / Page = property lines are not section headers (peekSecond, not peek)
+- String comparison and search ignore case by default
+- Read-only layout editor shows the compiler's error; finish doc/sample migration off hook-name overrides
+- Code-behind handlers for value-returning control events now run
+- Attribute With-handler diagnostics to their file; reject With in generic classes
+- Fold integer/Boolean operators and Const references in module/class Const initializers (buoy-releases#111)
+- PagePanel/content-view pages double-scale under Windows HiDPI
+- Decode non-ASCII \u escapes in Json.Parse; TryParse never throws (buoy-releases#112)
+- Fold integer/Boolean operators and Const references in module- and class-scope Const initializers (buoy-releases#111)
+- Stop PagePanel/content-view pages double-scaling under Windows HiDPI
+- Decode non-ASCII \u escapes in Json.Parse; make Json.TryParse never throw (buoy-releases#112)
+- String.Format heap overflow, OOB read, scratch-buffer leak, and 63-char truncation
+- Size String.Format's output buffers from content, stop leaking/truncating
+- Marshal AddressOf'd String-param callbacks for foreign (C) callers
+- Reseal buoyscript package against ARC-enabled codegen
+- Fix reference-counted String memory management
+- Implement reference-counted String memory management (ARC)
+- Sub Main(args) receives the real command line on Linux and Windows
+- Closures returned from a function (or a closure call) are freed
+
+## Changes
+- Add true multidimensional arrays (Dim a(r, c), a(i, j), Dimensions, LastIndex(dim), ResizeTo)
+- Add true multidimensional arrays: Dim a(r, c), a(i, j), Dimensions, LastIndex(dim), ResizeTo
+- TabView/PagePanel accept children in layouts: Tab / Page sections
+- Event handler refactor: With <control> blocks, value-returning fix, remove inline layout Handle
+- Migrate inline-handler tests and sample to With / subclass Handle
+- Make UIControl.mLayoutEngine/mLayoutHandle Internal
+- Add an internal tooling category
+- Moving some bugs around
+- Pin down String ARC leak with a failing memory + characterization test
+- Sub Main(args) must receive the real command line (failing on Linux/Windows)
+- Closures returned from a function must be freed (failing)
+
+
+---
+
 # v0.67.0
 
 ## New Features
