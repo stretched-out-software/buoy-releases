@@ -1,3 +1,20 @@
+# v0.69.0
+
+## New Features
+- Declare accepts integer-backed Enum params/results (Enum X As Int32)
+- Declare accepts integer-backed Enum params/results; Enum X As Int32 sized backing
+- Window/View blocks accept 'Inherits <Class>'
+
+## Bug Fixes
+- MSVC runtime build warnings + standalone Windows/Linux release publish
+- Publish standalone Windows/Linux releases via GitHub App to buoy-releases
+- Silence MSVC D9002/C4273 warnings in runtime build
+- Use llvm::*Overflow so Windows (MSVC) builds
+- Use llvm::*Overflow instead of __builtin_*_overflow so MSVC builds
+
+
+---
+
 # v0.68.0
 
 ## New Features
