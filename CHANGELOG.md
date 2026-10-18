@@ -1,3 +1,48 @@
+# v0.70.0
+
+## New Features
+- String As.../From... conversions via Bytes; remove ChangeEncoding/SetEncoding
+- Unicode simple case mapping for String UCase/LCase
+- Make String Len/Left/Right/Mid/Substring/IndexOf/InStr/Asc/Chr/Chars/pads character-aware
+- Add String ...Bytes variants; make stdlib byte sites explicit
+- Optional Declare and System.IsLibraryAvailable
+- Stage Optional Declare libraries beside output, LSP outline, app-folder-first loader
+
+## Bug Fixes
+- Make JSON parse/escape and Database named-parameter scans linear
+- ServerSocket IPC mode accepts a full socket path / pipe name
+- IPCSocket.Connect accepts a full socket path / pipe name
+- Harden character primitives (pad size overflow, strict UTF-8 widths)
+- Stage Linux regex/TLS archives under driver names, scrub builder path
+- Stage linux regex/tls archives under driver names, scrub builder path
+- Windows regex archive staging, builder path leak, release version in win/linux builds
+- Pass release version to cmake in windows/linux workflows
+- Stage windows regex archives under driver names, never leak builder path
+- Pass resolved release commit to linux/windows build workflows
+- Rebase onto branch tip before pushing release version commit
+- Push release version commit explicitly from detached HEAD
+- Resolve short commit SHA before checkout in release-mac workflow
+- Clean workspace before checkout in release-mac workflow
+- Treat bug report content and attachments as untrusted in triage/fix skills
+- Treat bug report content and attachments as untrusted data in triage/fix skills
+
+## Changes
+- TextField.Multiline: never apply to Password fields
+- TextControl Bold/Italic/Underline/TextColor/Multiline and Graphics text style
+- UTF-8 invariant, character-aware ops, explicit encoding conversion
+- Add failing JSON parse scan-performance test (red)
+- Add failing String conversion (As.../From...) test (red); register string-case sample
+- Add failing Unicode UCase/LCase test (red)
+- Ignore the playwright-mcp folder
+- Add failing codepoint-semantics String test (red)
+- Add failing String ...Bytes variant test (red)
+- Merge remote-tracking branch 'Github/main' into fix/windows-regex-archive-staging
+- Add hash specifier to windows build
+- Test+fix: Optional Declare ByRef/struct coverage, Windows loader hardening
+
+
+---
+
 # v0.69.0
 
 ## New Features
