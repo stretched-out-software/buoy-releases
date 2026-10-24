@@ -1,3 +1,533 @@
+# v0.71.0
+
+## New Features
+- WebSocket server support (HTTPServer 1.1.0)
+- Websocket-chat sample with ctest compile and cross registration
+- WebSocket registry, CloseAllWebSockets, cross-thread/TLS/scale tests
+- WebSocket keepalive pings and idle close 1001
+- WebSocket close handshake and exactly-once OnClose
+- WebSocket receive loop, message callbacks, serialized send
+- WebSocket route registration and upgrade handshake
+- WebSocket frame codec, UTF-8 and close-code validation
+- Pure-Buoy SHA-1 and WebSocket accept key
+- Shim uses core text style members (TextControl Bold/Italic/Underline/TextColor/Multiline, Graphics styles)
+- Window layout properties (Minimum/Maximum size, Changed, FullScreen, chrome flags) and Refresh
+- Graphics Bold/Italic/Underline/FontUnit (stored) plus API 1 ForeColor/PenWidth/StringWidth aliases
+- Rebuild DesktopToolbar around the API verified in real Xojo
+- DesktopToolbarButton wrapper with DesktopToolbar.Add/Dispatch (DBKit pattern)
+- RectControl base with Open/Close/CreatePane events (event list inferred, unverified)
+- Graphics short forms copy Xojo's pixel geometry (probe 17): w+1 fills, pixel-center strokes and lines
+- MemoryBlock.Compress levels copy Xojo's observed behavior (Normal stores; None/Fast/Best deflate alike; XFL bytes)
+- Ambient Graphics DrawingColor/PenSize/FontName/FontSize and Xojo's short draw forms
+- Global Quit([exitCode]) in the shim (converter-emitted Xojo global)
+- DesktopApplication Opening/Closing events with RaiseOpening/RaiseClosing
+- Global WindowCount() in the shim (converter-emitted Xojo global)
+- DatabaseException() and DatabaseException(message, errorNumber) constructors (Xojo's three forms)
+- Variant.Type and Variant.Type* constants with values read from real Xojo (probes 11-12)
+- URLConnection.RequestHeader(name) = value (Xojo's assignment form)
+- Shim matches real Xojo for CString/WString/PString edge cases and ToString(format) (probes 8-10)
+- Decompress throws on corruption/bad CRC like real Xojo (probes 7-8)
+- MemoryBlock.Decompress is lenient like real Xojo (probe 6)
+- MemoryBlock.Compress/Decompress emit and read gzip, per real-Xojo probe 4
+- DesktopWindow members (Left/Top/Handle/Hide/ShowModal/Show) as extensions on Window
+- Shim String.Length/Middle count codepoints, not bytes (STR-1, shim-only)
+- Shim UInt64.ToString(locale, format) keeps all 64 bits (STR-10 follow-up)
+- Zlib.Compress/Decompress in the zip package + MemoryBlock.Compress/Decompress in the shim (COL-12)
+- JSONItem.Constructor(jsonString) parses at construction (COL-10)
+- Shim Double/Integer.ToString(locale, format) number patterns + Locale.Raw (STR-10)
+- Shim JSONException.Offset as 0-based Position (COL-11)
+- Shim Dictionary(keyComparison) with KeyComparisonDelegate (COL-2)
+- Shim ParseJSONTree + GenerateJSON(Variant) over Dictionary/VariantArray trees (COL-9)
+- Shim MemoryBlock BooleanValue/Long/CString/PString/WString + CType to String (COL-13)
+- Shim byte-wise String methods LeftBytes..ChrByte (STR-5)
+- Shim Dictionary keys are Variants; add Variant.StringValue (COL-1)
+- Shim DesktopListBox.AddRow/AddRowAt use ParamArray (unlimited arity)
+- ParamArray on class methods, Shared methods and constructors (LANG-11)
+- Color = / <> compare by value (all four channels, exact)
+- Width/Height are content size on Windows too; add Window.TitleBarHeight and MenuBarHeight
+- Xojo shim uses core Rect (drop XojoRect), Window.Bounds= validates fields
+- Core Rect class in stdlib geometry; rename user-declared Rect structure in structures sample/docs
+- Xojo shim Keyboard members (Shared extensions on core Keyboard)
+- Live keyboard state, Linux runtime (GDK modifiers, X11 XQueryKeymap)
+- Live keyboard state, Windows runtime (GetAsyncKeyState)
+- Live Keyboard.Modifiers / Keyboard.IsKeyDown API (macOS runtime + stdlib)
+- Xojo shim XojoRect (Xojo Rect) and Window.Bounds, B3/B4 review leftovers
+- Xojo shim SortWith (1-3 companion arrays) and a real RandomizeSeed
+- Core in-place stable Array.Sort (optional comparator) and Random.Randomize
+- Xojo shim global CDbl (locale-aware ParseNumber with lenient Val fallback)
+- THR-10 - Xojo Timer.CancelCallLater(AddressOf Foo) cancels by delegate identity (LANG-15)
+- LANG-13 - Super.<member> = value (all assignment forms) parses and runs
+- LANG-12 Xojo shim — FolderItem.Path/Extension (FS-3), IPCSocket.Path (NET-18)
+- LANG-12 docs, sample and additive sweep (0 DIFF)
+- LANG-12 tooling — formatter keeps keyword-named fields/members, member-name highlighting, reserved-words note
+- LANG-12 keywords as member names — parser member-name positions, Structure/Enum lookahead, grammar
+- LANG-10 Xojo shim - XojoThread retired, Thread extensions, THR-1/THR-2
+- LANG-10 docs, sample and additive sweep (0 DIFF)
+- LANG-10 instance Thread.Start — keep-alive, start-once, never-started guards, Run dispatch
+- LANG-10 Thread subclass declaration — Inherits/IsA/CType Thread, gated Run event, Start built-in, LSP
+- LANG-9 Xojo shim payoff (NUM-1, COL-14, FS-13 Single)
+- LANG-9 Single members, extensions, BinaryStream, editor support, docs and sample
+- LANG-9 Single across the C ABI (Declare, float Structures, variadic)
+- LANG-9 Single text, hashing, sorting and String.Format
+- LANG-9 Single arithmetic, comparison, literal adaptation, Select Case, folding
+- LANG-9 Single type, conversions and declaration sites
+- LANG-8 Xojo shim payoff (NUM-3, NUM-4, THR-13 Enter/Leave)
+- LANG-8 editor support, docs and sample
+- LANG-8 Shared extensions on Currency and the sized integers
+- LANG-8 rule B for Mutex/Atomic/Condition/Thread/Task and Currency built-ins
+- LANG-8 Currency and sized-int extension receivers with Integer fallback
+- Xojo shim uses generic extensions (LANG-7 task 4)
+- LANG-7 LSP completion/hover for generic extensions, docs, sample
+- LANG-7 generic class receivers, generic Assigns setters, concrete-beats-generic ranking
+- LANG-7 generic-receiver extensions — templates, on-demand instantiation, Array receivers
+- RowSet is Iterable — For Each row In rs
+- Xojo shim uses For Each protocol (Dictionary, RowSet.Rows(), XQL pin) (LANG-6 task 4)
+- LSP hover for inferred For Each variables, docs and sample (LANG-6 task 3)
+- Stack/Queue/Set/Map iterable via For Each (LANG-6 task 2)
+- For Each over Iterable / Iterator (LANG-6 task 1)
+- Xojo shim implicit conversions via LANG-5 (Variant, MemoryBlock, FolderItem)
+- LANG-5 task 4 — LSP hover unwraps conversion plumbing, docs, sample
+- Converting overload tier — user conversions at call arguments (LANG-5 task 3)
+- User conversions at every assignment-like site, outgoing first (LANG-5 task 2)
+- Incoming Shared Operator CType declaration and explicit CType (LANG-5 task 1)
+- Xojo shim uses LANG-4 overloads (Read(count, enc), IndexOf order, Write(addr, data), Connect(), DrawLine/Rotate)
+- Never-callable extension warning, overload-aware completion, docs and sample (LANG-4 task 5)
+- Shared extensions overload real Shared methods and builtin namespace members (LANG-4 task 4)
+- Builtin String/Array methods compete with same-named extensions by signature (LANG-4 task 3)
+- Rule B overloads between real members and extensions on class/interface receivers (LANG-4 task 2)
+- Extension member-call visibility follows imports (LANG-4 task 1)
+- Xojo shim uses LANG-3 extension setters (BytePosition, RawData, AllowCertificateValidation, Timer.RunMode/Enabled, DatabaseFile)
+- Property/Assigns collision errors and Private instance Assigns-extension visibility (LANG-3 task 5)
+- T.Foo = v / T.Foo(k) = v Shared extension setters on class, Structure, Enum and primitive targets (LANG-3 task 4)
+- X.Foo(k) = v indexed extension setters incl. interface receivers; resolveAssignsSetter takes precomputed types (LANG-3 task 3)
+- X.Foo = v dispatches to paren-less Assigns Subs and extension setters (LANG-3 task 2)
+- Register Assigns extensions, keep them out of ordinary dispatch (LANG-3 task 1)
+- Extensions dispatch through subclass and interface receivers (LANG-2)
+- Xojo API 2.0 compatibility shim package (Import Xojo)
+- Shared extensions (LANG-1) — attach Shared members to existing types
+
+## Bug Fixes
+- BuoyScript JIT crashes on arrays, Throw/Try and trapping operations
+- BuoyScript JIT rejects the stdlib prelude (Iterable/Iterator reserved-name error)
+- Guard the WebSocket 101 write, reject HTTP/1.0 upgrades
+- Base WebSocket idle close on elapsed time, resync late ticks
+- Report 1006 when the peer drops TCP after our close
+- Close 1002 on 64-bit frame length with top bit set
+- Member access and method calls on literal and parenthesized receivers
+- Bump markdown-it to 14.3.3 (alert #75)
+- Bump ip-address to 10.7.4 (alerts #65, #76, #78, #79)
+- Bump brace-expansion to 1.1.21 / 2.1.7 / 5.0.12 (alerts #84-#92)
+- Bump fast-uri override to 3.1.8 (alerts #62, #63, #77, #80, #83, #93)
+- Bump undici to 7.30.1 (alerts #64, #66-#74)
+- Bump @modelcontextprotocol/sdk to 1.31.0 (alert #82)
+- Bump proxy-addr to 2.0.8 (alert #81)
+- Every codegen diagnostic fails the build instead of dropping code
+- PagePanel/TabView pages fill their container on Linux; Windows late-added and resized pages too
+- Lazy property first access is thread-safe (once-guard)
+- Reject Print of Enum/Delegate/Closure/Nil in Sema; fatal codegen for Print and unknown method
+- A ''' doc comment inside an Enum body is a comment, not a phantom member
+- Class Assigns setters pick the best-matching overload, not the first assignable one
+- Handle blocks in generic classes override the base event
+- HashCode of a Double or Single canonicalizes signed zero
+- Constant-folded Double division by zero yields the IEEE result, not 0
+- UInt64 ordering compares unsigned and unsigned kinds convert to Double as magnitudes
+- Sqlite3 binds and reads integers through SQLite's 64-bit API
+- Double <> is the unordered not-equal, so NaN <> NaN is True
+- Reject method-only modifiers on Property (E426) and property redeclaration (E427); add @Shadows
+- Reject = / <> and Select Case on Arrays and Structures in Sema
+- Ambient Graphics state is saved/restored by SaveState/RestoreState; FontSize 0 reads back 0 (real Xojo probe 13)
+- Sub-int enum Declare parameters/results get signext/zeroext by their backing type
+- Declares aliasing one C symbol keep their own prototype (wrapper per signature); drop XojoZip import-order rule
+- Shim JSON error offsets and malformed-number rejection match real Xojo (COL-11)
+- Shim JSON numbers typed by source text; JSONException.Offset counts characters
+- Shim EncodeURLComponent encodes ~; DecodeURLComponent passes malformed escapes through (STR-12)
+- With subject owned for the whole block (borrowed subject use-after-free)
+- Cast-sugar paren-less member call segfault; live Weak Lambda capture read segfault
+- Assigns setters convert key/index arguments through user conversions
+- Pin decided by the accessor called; Block bodies capture nothing (E162)
+- E171 once-per-site dedupe keyed by file, never while diagnostics are held
+- Array.First / Array.Last results are Heap borrows, so they get pinned
+- Pin a Heap-rooted receiver around hand-written property accessors
+- Writes to uncaptured outer locals in a Lambda are E171; captures owned
+- Case Nil arms are Nil tests; ?. on Optional names ?.; doc fixes
+- = Nil / <> Nil and Nil receivers never call a user Operator =/<>
+- Is/IsNot are identity or Nil tests, never a user Operator =/<>
+- For Each tracks the live array; pin marks are per-function
+- Pin borrowed operands of operators and builtin calls
+- Own a Heap-rooted method receiver for the whole call
+- Pin an array-property element argument against later arguments
+- The array For Each loop variable owns its element
+- Get-only computed Structure property used as storage
+- MacOS Toolbar Group NSToolbarItemGroup was stored without a retain
+- MacOS 27+ Toolbar.Size=Small leaves icons unchanged
+- MacOS Toolbar.Size=Small also switches the window to UnifiedCompact
+- Toolbar Small icons - MRC ownership of base image, symbol configuration, leak
+- MacOS Toolbar.Size=Small visibly shrinks toolbar icons
+- Geometry setters round 1 - Linux set_frame no-op for same-size/maximized windows, stale comments, docs, tests
+- Single-axis geometry setters keep live native geometry for the other axes
+- Round 2 minors - Windows finished-Resized carries final size, macOS keeps X/Y and content across toolbar changes (incl. Size/DisplayMode), Linux skips maximized/fullscreen and keeps content on DisplayMode, docs
+- Keep content size across MenuBar/Toolbar changes; DPI-safe placement; review minors
+- Single-placement Bounds= via bui_ui_window_set_content_frame; Windows l2p floors negatives; Linux comment fix
+- Exact content-origin placement via bui_ui_window_set_content_origin; internal helpers; Windows minimized fallback
+- Confine None/Ok/Err wildcard to call-argument matching; pin If(); statement guard
+- Check cairo surface status in Linux draw_picture_rect; single setFrame for macOS window placement
+- DesktopWindow.Left/Top and Bounds Left/Top are the content-area origin
+- None/Some/Ok/Err as call arguments type from the parameter; Array.Sort If() comparator
+- Window X/Y, Screen.Top, mouse screen Y use top-left global space; set_frame_d content-size semantics
+- Keyboard.IsKeyDown on Wayland via GTK key-event tracking
+- Signature-check built-in callback AddressOf; raw AddressOf through If and comparisons; located error for untyped AddressOf
+- Type AddressOf operator operands and Some() args; codegen backstop for untyped AddressOf
+- Signature-check AddressOf at any depth (nested Append/Insert, mixed literals, If of arrays); Optional hint
+- AddressOf placeholder cannot escape via Array/Optional; type array literals from context
+- Cap canvas side at 32767, guard GTK cairo surfaces, SetMaxSize <=0 means no limit on macOS
+- Reject inferred AddressOf locals; pin AddressOf in If/CType/Array.Append/Insert
+- Sanitize splitter/window size inputs, overflow-check Picture canvas
+- Review round 3 - Block literal Double return uses the exact sized-integer range
+- Review round 2 - checked Double to sized integer for ParamArray elements, Lambda returns and Optional.Or
+- Review round 1 - exact Double-to-sized-integer range on args/returns/setters/delegates, generic shadowing only by callable symbols
+- Parked Lows - generic diagnostics once per declaration, Array lookup message, XojoRegEx end re-seek, harness/vendor/sqlite3 hygiene
+- Reject + - * / \ Mod on two same-typed non-numeric operands (Boolean/Ptr/Structure/Class/DateTime/Enum/String) with a located error
+- A call through a same-named local/parameter delegate is never inferred as a user generic function
+- Double/Single to integer/Currency conversion raises OverflowException on NaN, Inf and out-of-range values
+- Clamp window/control geometry in all runtimes (macOS NSException abort, Win/GTK garbage)
+- Builtin-method sync checker recognises Array.LastIndex's 1..2 arity from merged multidim arrays
+- G1 review round 1 (run line, Sort hover, stale shim comments, exact collision diagnostics in rect/keyboard docs)
+- String Sort/Sorted/SortOrder order case-insensitively (like <), Sorted is stable
+- Keyboard review round 1 (non-flaky tests, doc caveats, comments, sample test pattern)
+- Sort/Sorted/SortOrder accept sized ints and Currency; SortWith key errors land on the call line; internal comparator type names
+- Array.Sort review round 1 (closure ARC over-retain, comparator writes, throw leaks), SortOrder, anonymous comparator types
+- Stack-probe checker bounds look-back at function boundaries, handles non-PE input, self-test; vendor scripts delete stale tree only after download; gate build-runtime-windows
+- C1 review round 1 - timer harness accepts ticking title; E406 recovery; generic-instantiation diagnostics; docs example
+- Build Windows minizip/plutovg/zlib/libyaml/libpng with stack probes; symbol-independent probe checker as a CTest gate; reseal zip + sqlite3, rebuild buoy_system/buoy_picture
+- CType/TryCast/IsA accept any Type as the target (generic instantiations, multi-arg generics, arrays)
+- Redeclaring an inherited method without Overrides is a compile error (E425)
+- Str() supports Int8/UInt8/Int16/UInt16/UInt32/UInt64; unsupported arg types are a Sema error with a location
+- Generic inference types arithmetic like checkExpr (Integer / Integer is Integer; And/Or on ints; sized-int arithmetic)
+- Build Windows PCRE2 with stack probes (regex.dll + static lib); reseal regex package
+- Integer / Integer lowers to exact sdiv/udiv (and folds exactly)
+- Random/Shuffle use a per-thread xoshiro256** generator, OS-seeded; add Random.Seed
+- Allow ByRef String in Buoy-to-Buoy Delegates; E1509 only where a delegate statically crosses the C boundary (user ruling)
+- Reject MenuItem/Menu reuse with InvalidArgumentException; macOS uncaught-NSException hardening; Linux detached TabView teardown double free
+- Bare For with no existing variable is E812 (spec 8.4 restored, user ruling)
+- For round 2 - rotated unit-step latch, counter mutation, implicit counter scope, E801 message, counter hover
+- Selector Boolean arguments pass as 1-byte BOOL (i8 zeroext arm64 / signext x86_64)
+- Reject ByRef String in Export and Delegate signatures (E1509); document CString return lifetimes
+- For review follow-ups - narrow start, loop-scoped counter, Step 0 (E801), Int64 max, spec/docs, LSP counter
+- Int8/Int16/UInt8/UInt16 FFI arguments and results carry signext/zeroext
+- An Export with a String parameter exports the copying C-ABI entry
+- Selector sends pass and return by-value Structures with the C ABI (objc_msgSend_stret on x86_64)
+- Numeric Select Case widens, handles Currency and unsigned UInt64, and checks Range bounds (B9)
+- Typed For loops - the counter, bounds and Step use the declared type (B8)
+- UInt64 mixed with a signed variable keeps signed \ and Mod; suppress Const cascade; docs
+- User-declared Release/Retain/Hash/TypeName wins over the Object builtin
+- Integer division by zero throws DivideByZeroException; reject Double operands to IntDiv/And/Or/Xor in Sema
+- System V byval and AArch64 HFAs for large by-value Structures; register exhaustion
+- Classify every small by-value Structure for the C ABI (Declare, Delegate, callbacks, Export)
+- A computed (Get/Set) property passed ByRef is copy-in/copy-out
+- Pin a borrowed argument that a later argument of the same call may free
+- Delegate calls use the C ABI for Structure arguments and results
+- A Shared property owns its Optional/Result/Structure value
+- New passes constructor arguments through emitCallArg (ByRef params)
+- Lambda/AddressOf/Block literals survive generic instantiation
+- A by-value Closure parameter is owned by the callee
+- Builtin-method sync check and String namespace signatures know the caseSensitive flag
+- Thread.Join(ms) clamps its remaining time, uses a monotonic deadline, and self-joins return at once on every platform
+- Release fresh Optional/Result/Structure temporaries passed to compiled callees or used as receivers
+- Closure/Delegate calls with Structure and ByRef parameters use the shared call-argument lowering
+- Lambda parameters are owned like Function parameters (adoptObjectParam)
+- Thread join - failed pthread_join (self-join) no longer marks consumed; timed loser uses remaining time; Windows Join is CAS-guarded against racing Detach; IsRunning during Join never probes
+- Array Of Optional/Result owns its payloads; by-value aggregate params are callee-owned copies; ByRef aggregate assignment owns; Closure property initializer claimed (B3d)
+- Thread join/detach state changes are atomic (CAS); Join on borrowed Current() box is a no-op; Windows Id() 0 after Detach; internal state field renamed; stale Xojo comments
+- Lambda Using (o) of an Optional/Result local owns the payload
+- Optional/Result/Structure holders own what they store (class property, Some(<Structure>), nested Structure, Stack.Pop/Queue.Dequeue)
+- Structure class/array fields follow the closure-field ownership rule (copy, assign, Return, array, capture, For Each)
+- Thread handle ownership - Current()/Main() release no longer detaches the live thread; Join/Detach consume the handle; Windows Id() is the OS thread id
+- Await / RaiseEvent pass-throughs inherit their operand's freshness; re-scope Structure-closure and temporary-argument reports
+- Fail-safe Optional/Result/Structure ownership - fresh is a whitelist, If arms normalised to +1, element loads borrowed
+- Lift declaration-time ByRef-receiver rejections (Currency/sized ints/Single/Assigns); docs and negative tests updated
+- By-value large-Structure extension receiver is passed through a temp copy in method-call form
+- Balance Optional/Result property-getter results (claim in Dim/assign/Return, release unclaimed reads)
+- Structure Closure fields own their env (literal, Dim, copy, assign, Return, arrays, Lambda capture)
+- Optional/Result locals with class or closure payloads are ARC-balanced on Dim-copy, assignment, Return and inline .Value
+- Lambda Using (x) retains and releases captured Array and Closure values
+- Array.Reversed retains String (and every ARC) element via emitElemRetain
+- Extension method-call form honors ByRef/byval-indirect parameters (receiver and args)
+- Retain/release closures stored in arrays and Optional/Result payloads (use-after-free of the closure env)
+- Select Case / With / SyncLock keep their subject temporaries alive until the end of the statement (adopted into a statement scope, released once on every exit path)
+- Array element stores convert the value to the element type and size the slot by it (arr(i)=v, obj.Prop(i)=v, Append, Insert); docs; bug reports to done/
+- Integer-backed Enum converts numerically (sitofp/trunc) into Double/sized-int/Single stores; hand-rolled store sites use coerceNumericStore
+- Windows link uses /OPT:SAFEICF + COFF addrsig so distinct functions keep distinct delegate identity
+- LANG-15 - Select Case on Delegate/CString/class selectors uses the = lowering and Sema checks; shim comment, spec Boolean wording, Windows-only function-folding note
+- LANG-15 - delegate/CString/CFStringRef equality compares pointers; Sema rejects mismatched-delegate comparison and non-ordered </>/<=/>= operands
+- LANG-13 - reject Super in Shared methods and non-capturing Lambdas in Sema
+- LANG-12 final review — With-shorthand formatter guard, doc/comment fixes, reseal Xojo pkg
+- LANG-12 Structure field takes a keyword name only when As follows; FuncName grammar
+- LANG-10 reject Shared members named like Thread built-ins; document generic caveat
+- LANG-10 shim - Stop() wakes a worker blocked in CheckPaused
+- LANG-10 publish the thread handle before Run starts
+- LANG-9 final-review findings — round Single text, ByRef Single Declare, Double vs Single/Integer overloads, order-independent array literals
+- LANG-9 Windows arm64 variadic HFA params, reject Single-struct Export by value off AArch64 HFA
+- LANG-9 Print of Single released its string; pin NaN/-0.0 to Double behavior
+- LANG-9 user operators returning Single, IEEE division throughout adapted Single literals
+- LANG-9 Integer-backed Enum converts to Single by value
+- LANG-8 final-review minors — ByRef value receivers rejected, hover id lookup, Join row, docs, negative ToHex padding
+- LANG-8 sized-int namespace head in statement position
+- LANG-8 keep Retain/Release/Hash/TypeName off Object extensions on built-in classes
+- LANG-7 re-review — speculative late generic classes for unpicked candidates
+- LANG-7 final-review findings (I-1..I-4, M-1..M-5)
+- LANG-7 generic Assigns extensions get LANG-3's receiver-kind and ByRef checks at declaration
+- LANG-7 receiver-fixed type parameters accept assignable args; one diag per generic body
+- Reserve Iterable/Iterator, guard duplicate generic interfaces, LSP walkers descend Try/With/Lambda (LANG-6 final fix)
+- Key class itables by Sema's mangled interface name (LANG-6 task 1 fix 1)
+- Copy OperatorDecl::isShared in generic-class instantiation clone
+- LANG-5 final review — outgoing self-recursion guard, incoming operator visibility, Assigns ByRef, docs
+- Apply argument conversions on interface-dispatch calls (LANG-5 task 3 fix 1)
+- No implicit conversion into C inside C's incoming operator; one type spelling for E909/trace (LANG-5 task 2 fix 1)
+- Interface source implemented by the target or any subclass keeps the downcast in explicit CType (LANG-5 task 1 fix 1b)
+- Incoming CType from unrelated class/interface sources, Shared-outgoing and Optional-param errors, injective operator names (LANG-5 task 1 fix 1)
+- Always filter inaccessible real members, with or without an extension (LANG-4 follow-up round 1)
+- Inaccessible real members don't compete with extensions (LANG-4 follow-up)
+- LANG-4 final-review fixes (Xojo IndexOf case rule, UDP port validation, real-miss visibility hint, iface named-arg diagnostic, pinned builtin param types)
+- UDPSocket.Write(address, data) raises on a bare host with no peer port; docs and ParamArray wording (LANG-4 task 6 fix 1)
+- Completion offers extensions only where Sema's visibility allows (LANG-4 task 5 fix 1)
+- Shared extensions hide farther same-signature ones; union builtin ties defer to the builtin chain (LANG-4 task 4 fix 1)
+- LANG-3 final-review findings — navigable setter write sites, ByRef Assigns receiver rejected, With compound-assign crash, plain-Sub write message, setter completion detail
+- Xojo shim side tables validate owner identity via weak refs; document Timer limits
+- Reject ordinary calls to setter-only Shared Assigns extensions on every target kind (LANG-3 task 4 review)
+- Keep free-function duplicate error and enforce Assigns Sub visibility for x.Foo = v (LANG-3 task 2 review)
+
+## Changes
+- Rebuilt buoyscript package
+- Rebuild and test the buoyscript package on every compiler change
+- Rebuild and reseal the buoyscript package from current compiler sources
+- Remove HTTPServer-1.0.0.buipkg; 1.1.0 is the only shipped package
+- Bump HTTPServer package to 1.1.0 and seal HTTPServer-1.1.0.buipkg
+- Bounded waits for server-side state in websocket-server
+- Docs/tests: STR-1 verified against Xojo; STR-2 findings recorded
+- Keyboard members match real Xojo 2024r4.2 (MenuShortcutKey; no MenuKey/AsyncCapsLock)
+- Introspection matches real Xojo 2024r4.2 where names allow
+- Legacy RSA (PKCS#1 v1.5/SHA-1, OAEP/SHA-1, 512+ bit keys); shim: XojoCrypto.RSA*
+- XojoCrypto matches real Xojo 2024r4.2 (enum numbers, SHA3, edge cases)
+- Dictionary and AddUserInterfaceUpdate take ParamArray Pair Of Variant, Variant
+- TextEncoding/Encodings and ConvertEncoding match real Xojo 2024r4.2
+- XojoRegEx matches real Xojo 2024r4.2 on groups, replacement escapes and error text
+- Select Case over a temporary String selector (report already fixed); close report
+- Merge main into feat/xojo-shim (TextControl style props); rebuild all buoy_ui runtimes from merged sources
+- DesktopToolbar handlers work from a subclass of a subclass (converter shape)
+- Drop Graphics.FontUnit / FontUnits; font sizes are always points
+- Probe 15 (real Xojo) pins corrupt/trailing/multi-member gzip behavior; shim already matched
+- Merge main (string UTF-8 invariant, PR #587) into feat/xojo-shim; move XojoText/XojoCore/XojoData to the new string API
+- Hiding accessors, Block captures, self-freeing closure (red / guard)
+- Lambda outer-local writes, accessor receivers, First/Last borrows (red)
+- Case Nil / Case Is = Nil arms and ?. on Optional (red)
+- = Nil / <> Nil, Nil receivers and synthesized guards skip user operators (red)
+- Is/IsNot must be identity/Nil tests, never user Operator = (red)
+- Color = / <> must compare by value (red)
+- Docs,test: For Each mutation is E803 by spec; live-count loop is current behaviour only
+- Red - For Each over an array that shrinks or grows mid-loop
+- Red tests - borrowed values freed by a later operand, argument or callee
+- For Each ownership test - expect live element reads per iteration
+- Red test - For Each loop variable must own its array element
+- Red tests - Get-only computed Structure property used as storage
+- Red test - Toolbar Group NSToolbarItemGroup must survive pool drain
+- Red test - Small must not shrink toolbar icons on macOS 27+
+- Red test - Toolbar.Size=Small must switch the window to UnifiedCompact
+- Red test - macOS Toolbar.Size=Small must shrink item icons
+- Failing regression test for stale-cache single-axis geometry setters (red)
+- Window-chrome demo gains Toolbar/MenuBar toggles, toolbar size/mode cycling and a Resized log
+- Width/Height preserved when a MenuBar/Toolbar is attached (red: Windows menu 260->241, macOS toolbar 260->292)
+- Window content-size and chrome-height tests (red: Windows Width is outer; TitleBarHeight/MenuBarHeight missing)
+- Negative content origin round trip; macOS Move clamps to Min/MaxSize (red on macOS min/max)
+- Xojo-rect exact content-origin asserts, plain Window coverage, no Windows tolerance
+- Docs/test: raw-Ptr callback note, screen/window/pointer coordinate wording; drop tautological window-topleft assertion
+- None/Some/Ok/Err call arguments and Array.Sort If() comparator (red)
+- Xojo DesktopWindow.Top/Bounds.Top are content-area top (red)
+- Window X/Y and Screen.Top are top-left space; set_frame_d content-size semantics (red on macOS)
+- Built-in callback AddressOf must be signature-checked; raw AddressOf via If/compare keeps working; Print AddressOf is a located error (red)
+- AddressOf operator operands and Some() arguments must be typed and checked (red)
+- AddressOf in nested-array Append/Insert and mixed literals must be signature-checked (red)
+- AddressOf placeholder escapes through arrays/Optional; typed array literal forms (red)
+- Picture side cap 32767, tighten WinHugeSize (red)
+- Inferred AddressOf local must be a located error (red)
+- Splitter NaN sizes, oversized Picture, Window min/max extremes (red)
+- Fix round 3 - Block literal Double return into a sized integer uses the exact range (IR pin, red)
+- Fix round 2 - Double to sized integer through ParamArray elements, Lambda returns and Optional.Or (red)
+- Fix round 1 - sized Double conversion through args/returns/setters/delegates, generic inference with non-callable same-named symbols (red)
+- Parked Lows - generic E404/E425 once per declaration + 'Box Of String' spelling, Array lookup element-type message, XojoRegEx end re-seek, UInt64/Int8 sort coverage (red)
+- Arithmetic on two Booleans/Ptrs/Structures/Classes/DateTimes must be a located Sema error (red)
+- A same-named local/param/property delegate call must not be captured by a user generic function (red)
+- Double/Single to integer conversion of NaN/Inf/out-of-range must raise OverflowException (red)
+- Window/control geometry setters must clamp extreme and NaN values (red)
+- Pin rank-2 rejection of Sort/SortOrder/Sorted after merging multidim arrays
+- Failing tests for core Rect and case-insensitive String sort (red)
+- Docs+sample: keyboard state page, UI sample, tests registration, Xojo docs
+- Keyboard-state unit test (red, API not yet implemented)
+- Deep-stack tests for Windows minizip/plutovg stack probes (red: svg-image x64+arm64, zip-read arm64)
+- Shared-ext-from-union uses an enum as the String.From-unsupported argument (Int32 is now supported)
+- Red - CType/TryCast/IsA reject generic and array targets at parse time
+- Red - Str() on sized ints exits in codegen with no location; String.From/StdOut reject them
+- Red - generic inference types Integer / Integer, And/Or and sized-int arithmetic wrong (also corrects E425 test line)
+- Fix round: PCRE2 Windows vendor stamp + probe gate; split regex-deep-stack into package and builtin tests
+- Red - redeclared base method without Overrides is not diagnosed (E425 pending)
+- Red - regex-deep-stack crashes 0xC0000005 on Windows (PCRE2 built without stack probes)
+- B3 fix round - Introspection.GetType(Variant), BOM-free/unit-safe/bounds-checked StringValue(enc), read-only Encodings, test+sample coverage; reseal Xojo
+- XojoCrypto (Hash/MD5/SHA1/SHA2/HMAC/PBKDF2/GenerateRandomBytes), MemoryBlock EncodeHex/EncodeBase64, sample; reseal Xojo
+- Red tests for XojoCrypto (hash, HMAC, PBKDF2, random, MemoryBlock Encode*)
+- Add LEGACY MD5/SHA1 to HashAlgorithms (hash + HMAC), rebuilt all 6 targets, resealed
+- Red tests for MD5/SHA1 hash + HMAC (RFC 2202)
+- Encodings sample, Pair/encodings/introspection docs, gap-decision rows
+- TextEncoding/Encodings, String.ConvertEncoding/DefineEncoding, MemoryBlock encoding StringValue, name-only Introspection; reseal
+- Red tests for Encodings/TextEncoding, Introspection, Pair of Variant
+- RegEx fix round - snap mid-char offsets, clamp SearchStartPosition, document import leak and regex requirement
+- Bug report: object TypeName/Hash on Nil fixed, move to urgent/done
+- Variant KindName/ToString Nil-object guard, BooleanValue pin test, docs, reseal
+- Builtin TypeName()/Hash() use codegenCheckedReceiver so Nil raises NilObjectException
+- Object-typename-hash-nil (red) — TypeName()/Hash() on Nil must raise NilObjectException
+- Xojo-regex sample (4-test), examples copy, docs, gaps update, STR-11 done
+- XojoRegEx/XojoRegExMatch/XojoRegExOptions/XojoRegExException over PCRE2
+- Xojo-regex (red) — XojoRegEx/XojoRegExMatch/XojoRegExOptions/XojoRegExException
+- Random follow-ups: refresh stale unseeded/rand() comments, 4-test pattern for random-seed sample, document RandomizeSeed no-op reason; reseal Xojo package
+- Variant.KindName names the concrete class for object payloads; refresh stale menu-reuse/TabView/TypeName comments and docs
+- Drop redundant LCase/case-insensitive workarounds now that Buoy string builtins ignore case; docs
+- Rename Semaphore.GiveBack to Release (compiler bug fixed); docs, tests, resealed package
+- Pin Xojo shim case-insensitive helper behavior before cleanup (green)
+- Docs+shim: Random seeding docs, Random.Seed sample, XojoRandom.Seed forwards to Random.Seed; move 3 reports to done/
+- Failing tests for Random range/bounds/seed and exact Integer / (red)
+- Fixes for pair
+- Red - ByRef String delegates allowed Buoy-to-Buoy, E1509 only at the C boundary (user ruling)
+- Red - menu reuse throws InvalidArgumentException, detached TabView teardown, macOS uncaught NSException aborts
+- Red - bare For with no existing variable must be E812 (spec 8.4, user ruling)
+- Red - For round 2 (counter mutation near Int64 max, implicit counter scope, E801 message, counter hover)
+- Red - Selector Boolean arguments travel as 1-byte BOOL
+- Red - ByRef String rejected in Export and Delegate signatures (E1509)
+- Red - For review follow-ups (narrow start, Step 0, Int64 max, counter scope)
+- Test/docs: FFI Structure review follow-ups (R1-R3)
+- Red - Int8/Int16/UInt8/UInt16 FFI arguments and results are extended
+- Red - Export String parameter called through the exported symbol
+- Red - Selector sends with by-value Structure arguments and results
+- Red - Select Case numeric widening, Currency, unsigned UInt64 and Range-bound diagnostics
+- Red - typed For loops (Double/Single/sized/unsigned/Currency counters, Sema rejections)
+- Red - UInt64 mixed with a signed variable must keep signed \ and Mod
+- Red - user methods named Release/Retain/Hash/TypeName replaced by the Object builtin
+- Red - integer division by zero unchecked (SIGFPE on x86_64); Double operands to IntDiv/And/Or/Xor accepted by Sema
+- Red - > 16-byte by-value Structures and register exhaustion cross the C ABI wrongly
+- Red - small by-value Structures cross the C ABI wrongly (params, Delegates, callbacks, Export)
+- Test+docs: Delegate C-ABI review follow-ups (I1, I2, I3, I5, I6)
+- Red - a computed (Get/Set) property passed ByRef aborts codegen
+- Red - a borrowed argument is freed by a later ByRef argument in the same call
+- Red - Delegate calls to/from C use Buoy's Structure lowering, not the C ABI
+- Red - overwriting a Shared Optional/Result/Structure property leaks
+- Red - New with a ByRef constructor parameter
+- Red - Lambda/AddressOf inside a generic body is dropped
+- Red - Closure parameter reassignment frees the caller's closure env
+- Update branch tests for main's case-insensitive String search
+- Merge Github/main (string comparison and search ignore case by default, #573) into feat/xojo-shim
+- Red - Thread.Join(ms) with a negative timeout blocks like an infinite Join()
+- Red - Xojo shim global CDbl (undefined function)
+- Red - Thread.Join timing and self-join edges (Windows negative remaining timeout, self-join deadlock vs owner Join, POSIX nap-count drift)
+- Red - fresh Optional/Result/Structure temporaries (call arguments, HasValue/IsOk receivers) leak
+- Red - Closure/Delegate calls with Structure and ByRef parameters
+- Red - Lambda parameter reassignment releases the caller's reference
+- Red - self-join marks thread consumed, timed loser re-waits full timeout, Windows Detach during Join, IsRunning during Join
+- Red - Array Of Optional ownership, setter-argument forwarding (B3c r1), ByRef aggregate assignment, Structure parameter field stores, Closure property initializer
+- Red - concurrent Join/Detach on one Thread, Join on a borrowed Current() box, Windows Id() after Detach
+- Red - Lambda Using (o) of an Optional/Result local does not retain the payload
+- Red - Optional/Result/Structure holders (class property, Some(<Structure>), nested Structure, Stack.Pop/Queue.Dequeue) don't own what they store
+- Red - Structure class field not retained by Dim copy / assign / Return / array push / Lambda capture (double release)
+- Red - Thread.Current()/Main() release detaches the real thread; Join/Detach leave a stale handle (Join early/hang, double detach of recycled handle)
+- Red - Dim/Return of Await <Optional/Result> leaks the payload (+1 per evaluation)
+- Red - Optional/Structure ownership: mixed If getters/returns/Dims and builtin element loads (use-after-free / double release)
+- Share per-argument ByRef/byval-indirect lowering across call paths (emitIndirectArg/emitCallArg); IR identical on 9 tests x 3 targets
+- Red - by-value large-Structure extension receiver (IR verify failure) and lifted ByRef receivers on sized ints/Currency/Single/Assigns
+- Share the array element store helpers (consumeElemValue, storeArcElemSwap); fix RemoveValue/Lambda-literal wording in closure docs and test
+- Red - Structure Closure fields do not own their env (NilObjectException / use-after-free)
+- Red - Optional/Result local Dim-copy, assign, Return and inline .Value are ARC-unbalanced
+- Red - Lambda Using (x) does not retain a captured Array or Closure (segfault / NilObjectException)
+- Red - Array.Reversed on Array Of String does not retain the elements (use-after-free)
+- Red - extension method-call form ignores ByRef params (IR verify failure, receiver/String/class segfault or bus error)
+- Red - closures stored in arrays are not retained (Append/Insert/index-assign/literal/property, release coverage)
+- B2 minors - unconditional statement-scope release for Select/With/SyncLock, drop no-op flushTemps, test Return/Exit/Continue out of SyncLock-on-temp and body dropping the subject's source
+- B1 minors - accurate array-store comments/naming, drop dead Integer->Double arms, element-store type assert, zip Deflate regression assertion
+- Red - Select Case / With / SyncLock subject temporaries are released before the statement uses them
+- Red - array element stores of a different numeric type write raw bits at the value's width/stride
+- Red - Integer-backed Enum to Double/Int32/Single stores raw bits; Some(enum) aborts IR verifier
+- Red - Windows lld ICF folds identical-bodied functions (AddressOf A Is AddressOf B True; CancelCallLater cancels twin)
+- LANG-15 red - Select Case on Delegate/CString/class selector aborts codegen (fcmp ptr); Case Is </Range on non-ordered selectors has no Sema diagnostic
+- LANG-15 red - delegate/CString equality aborts codegen (fcmp ptr); ordering of non-ordered operands has no Sema diagnostic
+- LANG-13 red - Super in Shared method / non-capturing Lambda must be rejected in Sema (currently passes --check and asserts in Codegen)
+- LANG-13 red - Super.<member> = value tests (fail with E418 on current parser)
+- Merge Github/main into feat/xojo-shim
+- LANG-12 red — FolderItem.Path/Extension, IPCSocket.Path
+- LANG-12 red — formatter on keyword-named fields and enum members
+- LANG-12 red — Structure keyword field needs As; LSP completion test checks parse errors
+- LANG-12 red tests — keyword member names, guards, LSP
+- LANG-10 red - Shared members named like Thread built-ins must be rejected
+- LANG-10 red - Pause then Stop must not deadlock CheckPaused
+- LANG-10 red - Xojo threading on Buoy's own Thread
+- LANG-10 red test — Run sees its own published thread handle
+- LANG-10 receiver-shape test + codegen no-unknown-method checks
+- LANG-10 red tests — Thread subclass runtime on all lanes
+- LANG-10 red tests — Thread subclass declaration, negatives, LSP
+- LANG-9 final-review red — round Single text, ByRef Single Declare, Double vs Single/Integer overloads, array literal inference, @Serializable Single message
+- LANG-9 red — Xojo shim Single members, MemoryBlock Single/Double/CurrencyValue, BinaryStream Single
+- LANG-9 red — Single members, extensions, Shared, BinaryStream, LSP
+- LANG-9 red — Windows arm64 variadic HFA params, Single-struct Export ABI, variadic diagnostic
+- LANG-9 red — Single across the C ABI (Declare, float Structures, variadic)
+- LANG-9 red — Single text, hashing, sorting and String.Format
+- LANG-9 red — user operators returning Single, nested IEEE division, float IR
+- LANG-9 red — Single arithmetic, comparison, literal adaptation, Select Case, folding
+- LANG-9 red — Integer-backed Enum to Single at every store site
+- LANG-9 red tests — Single declarations and conversions
+- LANG-8 final-review red tests — ByRef value receivers, negative ToHex padding
+- LANG-8 red tests — Xojo shim NUM-3/NUM-4/THR-13 mappings
+- LANG-8 red tests — LSP completion/hover for built-in receivers and Shared targets
+- LANG-8 red tests — Shared extensions on Currency and sized ints
+- LANG-8 red tests — thread classes and Currency built-ins under rule B
+- LANG-8 red tests — Currency/sized-int receivers and Integer fallback
+- LANG-7 re-review red tests — dead instances naming late generic classes
+- LANG-7 final-review red tests (I-1..I-4, M-1, M-2)
+- LANG-7 fix round 1 — generic interface receiver pin; generic Assigns on value receiver rejected (red)
+- LANG-7 generic class receivers, Assigns, ranking, visibility (red)
+- LANG-7 fix round 1 — receiver-fixed T accepts assignable args; one diag per generic body (red)
+- LANG-7 generic-receiver extensions — Array receivers (red)
+- Docs/test/sample: RowSet For Each resume semantics, HasMoreRows wording, README, sample
+- RowSet For Each (red)
+- Reserved Iterable/Iterator names, duplicate generic interface, LSP walker descent (LANG-6 final fix, red)
+- Pin Stack order, empty collections, class-valued Map, Entries order (LANG-6 task 2 fix)
+- Register for-each-collections (LANG-6 task 2) (red)
+- For Each over Stack/Queue/Set/Map (LANG-6 task 2) (red)
+- Iterable with Array / Int32 / nested-generic type args crashes on itable lookup (LANG-6 task 1 fix 1) (red)
+- For Each over Iterable / Iterator (LANG-6 task 1) (red)
+- Incoming CType on generic class loses Shared after instantiation (red)
+- LANG-5 final-review guards — outgoing self-recursion, incoming visibility, Assigns ByRef (red)
+- Interface method call with a converted argument (LANG-5 task 3 fix 1, red)
+- Converting overload tier — user conversions at call arguments (LANG-5 task 3, red)
+- No implicit conversion into C inside C's own incoming operator (LANG-5 task 2 fix 1, red)
+- User conversions at every assignment-like site, outgoing first, trace (LANG-5 task 2, red)
+- Interface source implemented by a subclass of the target keeps the downcast (LANG-5 task 1 fix 1b, red)
+- Incoming CType from unrelated class/interface sources, Shared outgoing and Optional-param errors, E909/Assignable/Nil pins (LANG-5 task 1 fix 1, red)
+- Incoming Operator CType declaration and explicit CType (LANG-5 task 1, red)
+- Always filter inaccessible real overloads (with or without extension), Super pin, red
+- Shared Assigns case for inaccessible real vs extension, red
+- Inaccessible real members don't compete with extensions, red (LANG-4 follow-up)
+- LANG-4 final-review fixes, red (Xojo IndexOf case, UDP port parse, real-miss visibility hint, iface named arg, builtin param types, Super pin)
+- Xojo shim LANG-4 shapes (Read(count, enc), IndexOf order, Write/Read datagram, Connect(), DrawLine/Rotate) (LANG-4 task 6, red)
+- Never-callable extension warning, overload-aware completion (LANG-4 task 5, red)
+- Shared extension hiding per signature, String.From union diagnostic, paren-less pin (LANG-4 task 4 fix 1, red)
+- Shared extensions overload real Shared methods and builtins (LANG-4 task 4, red)
+- Builtin String/Array methods overload with same-named extensions (LANG-4 task 3, red)
+- Extension overloads beside real members, rule B (LANG-4 task 2, red)
+- Pin selective-import and Public Import chain extension visibility (LANG-4 task 1)
+- Extension member-call visibility follows imports (LANG-4 task 1, red)
+- LANG-3 final-review regressions (red): setter write-site navigation, ByRef Assigns receiver, With compound assign, plain-Sub write message, setter completion detail
+- Property/Assigns collision and Private instance-setter negatives (LANG-3 task 5, red)
+- Shared setter negatives; ordinary calls to setter-only Shared extensions must be rejected (LANG-3 task 4 fix, red)
+- T.Foo = v / T.Foo(k) = v Shared extension setters (LANG-3 task 4, red)
+- X.Foo = v extension setters and paren-less Assigns Subs (LANG-3 task 2, red)
+
+
+---
+
 # v0.70.0
 
 ## New Features
