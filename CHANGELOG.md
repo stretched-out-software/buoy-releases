@@ -1,3 +1,38 @@
+# v0.72.0
+
+## New Features
+- Window owner relationship and Sheet window type (WIN-13, WIN-14)
+- Mouse cursors - 24 new CursorType members, per-control/window/app cursors, hide
+- Splitter holding priority, content-derived pane limits, wider divider grab area
+- Splitter holding priority, content-derived pane limits, and a wider divider grab area
+- Allow a class declared in a Module block as a base class
+
+## Bug Fixes
+- A Label inside a ListBox cell can start a drag (macOS)
+- Own the cell-drag extras array explicitly (CocoaUIBridge.mm builds without ARC)
+- StdIn and TextInputStream ReadLine return whole lines; TextInputStream.EOF keeps pipe data
+- JSON serialization writes numbers that round-trip
+- TextInputStream.ReadLine returns whole lines; EOF no longer eats a byte on a pipe
+- StdIn.ReadLine returns whole lines longer than 4095 bytes
+
+## Changes
+- VSCode update npm dependencies
+- Rebuilt buoyscript package
+- CustomCursor, a mouse cursor from a Picture and a hot spot (WIN-12)
+- Window.BackgroundImage, BackgroundColor and Windows Composited (WIN-5)
+- Merge feat/window-backdrop into feat/custom-cursor; rebuild runtimes from merged sources
+- Merge main into feat/window-backdrop; rebuild runtimes from merged sources
+- Merge main into fix/listbox-cell-drag-source; rebuild libbuoy_ui dylibs from merged sources
+- Merge main into fix/listbox-cell-drag-source
+- Merge main into feat/window-backdrop
+- Window.BackgroundImage and Windows-only Window.Composited (WIN-5 Backdrop)
+- Window.HasBackgroundColor and BackgroundColor (WIN-5, colour only)
+- Merge main into feat/cursors; rebuild buoy_ui runtimes from merged sources
+- Assert exact Splitter pane height on every platform; close the headless-size bug
+
+
+---
+
 # v0.71.0
 
 ## New Features
