@@ -1,3 +1,25 @@
+# v0.73.0
+
+## New Features
+- Rename TabView.SelectionChanged to PanelChanged
+- AddressOf can target a Module-block function or a class Shared method
+- Allow a Delegate declared in a Module block
+
+## Bug Fixes
+- A Shared method AddressOf target gets the foreign-caller String marshaling thunk
+- ParamArray elements take the same implicit conversions as ordinary arguments
+
+## Changes
+- MousePosition on TextArea and ListBox
+- MousePosition on TextArea and ListBox; Windows TextArea CR+LF translation
+- URLConnection.SendBytes, a binary-safe HTTP body
+- URLConnection.SendBytes, a binary-safe (length-aware) HTTP body
+- ListBox.DoubleClick(row) and TextArea selection API
+- ListBox.DoubleClick(row) and TextArea SelectionStart/SelectionLength/InsertText
+
+
+---
+
 # v0.72.0
 
 ## New Features
