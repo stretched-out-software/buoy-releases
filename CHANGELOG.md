@@ -1,3 +1,72 @@
+# v0.73.1
+
+## Bug Fixes
+- A disabled menu item no longer fires from its keyboard shortcut on Linux
+
+## Changes
+- Xojo shim: decision-sheet items, controls, and the core window and file features they needed
+- Merge main into feat/xojo-shim (disabled-item shortcut fix, release 0.73.0)
+- Xojo shapes demo window (CTL-28)
+- Xojo shim: DesktopWindow.Backdrop over core's BackgroundImage (WIN-5)
+- Xojo shim: owned windows and Sheet windows reach DesktopWindow (WIN-13, WIN-14)
+- Xojo shim: MouseCursor, the 19 Cursors members and counted Hide/Show (WIN-11, WIN-12)
+- Xojo shim: URLConnection.SendSync(method, URL, file, timeout) (NET-3)
+- Merge main into feat/xojo-shim (TabView PanelChanged rename, ListBox/TextArea MousePosition)
+- Merge main into feat/xojo-shim
+- Xojo shim: XML node kinds, XMLDocument.Encoding/LastError/Transform, XMLStyleSheet (XML-6, 7, 8)
+- Xojo shim: Prepare / PreparedSQLStatement / Bind / BindType (DB-4)
+- Xojo shim: DesktopPagePanel.PanelChanged via SelectPanelAt (CTL-21)
+- Xojo shim: DesktopRectangle, DesktopOval and DesktopSeparator (CTL-28)
+- Xojo shim: DesktopListBox sorting, CellTagAt, ColumnWidths (CTL-13); CTL-10 recorded as a gap
+- Xojo shim: DesktopRadioGroup layout (CTL-6) and DesktopTextField validation (CTL-8)
+- Xojo shim: System.IsFunctionAvailable and System.CommandLine (SYS-2, SYS-3)
+- Xojo shim: TCPSocket parity members, SSLConnected and UDPSocket.BroadcastAddress
+- Xojo shim: StackOverflowException, ThreadEndException and Timer.CallLater with a value
+- Xojo shim: Xojo's Shared stream factories (FS-19)
+- Xojo shim: DatabaseColumn value properties are read/write
+- Window.MouseX and MouseY (WIN-10)
+- Window.ControlCount, LastControlIndex, ControlAt and Controls (WIN-7)
+- Window.HasBackgroundColor and BackgroundColor (WIN-5, colour only)
+- Focus fixes found hand-testing FocusNext/FocusPrevious (WIN-9)
+- Window.FocusNext, FocusPrevious, ClearFocus and IsActive (WIN-9)
+- Runtime/linux: Tab handler switches the focus ring on
+- Xojo shim: System.Beep (SYS-1, Beep only)
+- Runtime/linux: Tab follows Buoy's tab order, not widget position
+- Runtime/linux: HasFocus sees focus inside text fields and text areas
+- Window-focus no longer crashes on launch
+- Window.FocusedControl and DesktopWindow.Focus (WIN-8)
+- Window chrome flags - HasCloseButton/Minimize/Maximize/FullScreenButton/HasTitleBar (WIN-4)
+- Window.FullScreen and Window.SystemUIVisible (WIN-3)
+- Window state - Maximize/Minimize/Restore and Maximized/Minimized/Restored/Moved (WIN-1)
+- Xojo shim: DesktopCanvas.MouseWheel (WIN-22 mapping); queue converter event requests
+- MessageBox options - icon, title, default/cancel button (WIN-47)
+- Build the GTK menu model from an ordered item list (WIN-42 fix)
+- MenuItem.Visible (WIN-42)
+- Scale GTK MouseWheel deltas to lines (WIN-22)
+- MouseWheel event on Canvas (WIN-22)
+- Add pycache to ignore
+- FileSystemItem.IsSymlink/IsAlias; shim FolderItem.IsAlias honors followAlias (FS-5)
+- FileSystemItem.SetModificationDate/SetCreationDate; shim timestamp setters (FS-4)
+- BinaryStream.FromMemoryBlock(mb) replaces the BinaryStreamOver function
+- Drop BinaryStreamOver(String); Xojo has no String BinaryStream constructor
+- In-memory BinaryStream (BinaryStream.FromBytes); shim BinaryStreamOver (FS-12)
+- XojoShell, Xojo's Shell over Buoy's Shell (FS-20); Shell.PID
+- Read-only Position on TextInputStream and TextOutputStream (FS-16); FS-17 closed as Won't
+- SpecialFolder.UserSBin
+- SpecialFolder Windows and legacy members (FS-28)
+- FolderItem.Zip/Unzip and FolderItem.ZipCompressions (FS-9)
+- FolderItem.Owner and Group on macOS, Linux and Windows (FS-7)
+- FolderItem.SaveInfo/FromSaveInfo/SaveInfoModes (FS-8)
+- FolderItem.Locked sets the immutable flag on macOS (FS-6); FS-10 checked
+- Readable/Writeable adapters over Buoy's streams (FS-18)
+- BinaryStream Int8/UInt8/UInt64/PString/Currency, SpecialFolder fixed folders, Shell.Poll (FS-13/22/29)
+- Decision sheet: confirm 44 rows as Won't; correct the FS-23 gaps-doc entry
+- XojoPair, Xojo's non-generic Pair (converter target)
+- Decision sheet: FS-1 (BinaryStream byte order), GFX-1 (Color.RGB/HSV), NET-1, EXC-1
+
+
+---
+
 # v0.73.0
 
 ## New Features
