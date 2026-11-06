@@ -1,3 +1,30 @@
+# v0.73.2
+
+## Bug Fixes
+- A hidden menu item no longer fires from its keyboard shortcut on Linux
+- Bump qs and serialize-javascript in editors/vscode (alerts #110, #114)
+- Bump zod to 4.6.7 in editors/mcp (alert #100)
+- Bump @azure/identity so msal-node resolves to 7.1.2 (alert #111)
+- Bump body-parser and qs in editors/mcp (alerts #101, #112)
+- Bump fast-uri override to 3.1.9 (alerts #102-#109)
+- Bump hono and @hono/node-server (alerts #95, #113)
+- Bump @modelcontextprotocol/sdk to 1.32.0 (alerts #96-#99)
+- Bump @azure/identity to 4.14.1 so @azure/msal-node resolves to 7.1.2 (alert #111)
+- Bump qs to 6.17.1 and serialize-javascript override to 7.1.3 in editors/vscode (alerts #110, #114)
+- Bump body-parser to 2.4.0 and qs to 6.17.1 in editors/mcp (alerts #101, #112)
+- Bump @hono/node-server to 2.1.6 and hono to 4.13.16 (alerts #95, #113)
+- Bump @modelcontextprotocol/sdk to 1.32.0 (alerts #96, #97, #98, #99)
+
+## Changes
+- Right-click on every control, cascading up to the Window
+- Merge remote feat/input-tap (mouse events, #650) into the main merge; rebuild runtimes
+- Merge main into feat/input-tap; rebuild runtimes from merged sources
+- Mouse events on every control, with bubbling
+- Right-click reaches ConstructContextualMenu on every control, cascading up to the Window
+
+
+---
+
 # v0.73.1
 
 ## Bug Fixes
