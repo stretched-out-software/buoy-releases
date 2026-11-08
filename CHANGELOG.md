@@ -1,3 +1,42 @@
+# v0.74.0
+
+## New Features
+- Rename a control from the layout editor's Name field
+- ScrollBar and ScrollCorner (CTL-29)
+- Add zic binary for all platforms (part of tzdata work)
+- Loaded tz data may omit zones, stricter plausibility checks, zic shipping scripts
+- App_resources.json TimeZoneData entry ships a pinned IANA release with the app
+- Buoy tzdata build, helpers/ folder, and slim-zic abbreviation fix
+- Replaceable time zone data (TimeZone.LoadData / LoadDataFile / ResetData / ExportData / DataSha256)
+- Named (IANA) time zones via TimeZone.FromName, in a separate buoy_tzdata library
+
+## Bug Fixes
+- BinaryStream Write* failures throw IOException
+- BinaryStream Write* failures throw IOException instead of only setting LastError
+- Linux key tracker no longer connects invalid focus-out signal
+- A hidden or disabled menu item no longer fires from its shortcut on Windows
+- Ship the arch-suffixed feature archives in the x86_64 macOS package (Intel Mac links)
+- Build the VSCode extension with npm ci in packaging scripts
+- Ship the arch-suffixed feature archives in the x86_64 macOS package, and arm64 ones for arm64 targets
+- A project manifest can no longer name the zic program the build runs
+
+## Changes
+- Xojo shim: DesktopScrollBar over core's ScrollBar (CTL-29)
+- Merge main into feat/scrollbar; Windows wheel hook trusts only in-process bars
+- Run tests serially per platform; give every lane its own output directory
+- Run tests serially per platform, and give every lane its own output directory
+- Xojo shim: window types, ThreadStates, StartMethod with a value, WIN-36; WeekOfYear verified against Xojo
+- Named IANA time zones, replaceable zone data, buoy tzdata build
+- Merge main into feat/xojo-shim
+- Xojo shim: DesktopWindow.ContextualMenuItemSelected (WIN-36)
+- Merge main into fix/menu-shortcut-hidden
+- Xojo shim: all five ThreadStates and StartMethod with a value (THR-4, THR-8)
+- Xojo shim: DateTime.WeekOfYear verified against Xojo 2024r4.2 (DT-2)
+- Xojo shim: Xojo's ten window types, mapped onto core's six (WIN-15)
+
+
+---
+
 # v0.73.2
 
 ## Bug Fixes
