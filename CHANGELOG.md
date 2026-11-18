@@ -274,6 +274,75 @@
 
 ---
 
+# v0.75.0
+
+## New Features
+- SegmentedControl, a native row of joined selectable segments
+- Window.DocumentEdited -- the macOS edited dot in the close button
+- MacOS Declare links the installed Apple SDK's .tbd before the bundled stub
+- TimeZone.Local reports the host's real zone name and abbreviation; FromSystem
+
+## Bug Fixes
+- Sign app bundles with a secure timestamp and hardened runtime for real identities
+- Sign Mach-O files inside shipped .buipkg archives so notarization passes
+- Sign the Mach-O files inside shipped .buipkg archives so notarization passes
+- Stage dylibs beside bare macOS binaries and use @executable_path
+- HTTPServer rejects conflicting Content-Length and unsupported Transfer-Encoding
+- Keep the drag image Picture alive until the drag ends
+- GTK file dialog keeps AllowMultiple and InitialDirectory across Show()
+- GTK file dialog no longer uses its title after the dialog is freed
+- ScrollBar sample's Linux/Windows cross-compiles write to their own lane directories
+- XMLItem.ToString() no longer duplicates namespace declarations
+- Collect generic instantiations inside Try, Throw, SyncLock and With
+- DateTime calendar fields are valid for instants before 1970 on Windows
+- ContextMenu.Show delivers the chosen item to the owner's ContextualMenuAction
+- Assigning Nil to a class-array element now releases the displaced object
+- Ship the Linux liblldb under its SONAME so buoy-dap can start
+- MacOS targets link with no Apple SDK (Security, CoreFoundation, libc++ stubs)
+- Timezone_local sample's Linux cross-compile uses its own lane directory
+- Fail the Linux release when a prebuilt UI runtime is stale
+- FileSystemItem.Delete never follows a directory link out of the tree
+- Timezone_local sample's Linux cross-compile writes to its own lane directory
+- SQLite adapter throws DatabaseException when sqlite3_step fails
+- A Throw inside a Catch arm now runs the Try's Finally before propagating
+- Find the SDK in the Linux FHS package layout (/usr/lib/buoy)
+- Release SyncLock and Try-body scopes before running Finally on Return/Exit/Continue
+- Reject = and <> on a Result operand instead of failing LLVM verification
+- Rebuild the Linux buoy_ui runtimes so they export the ScrollBar and ScrollCorner symbols
+- Math.Min/Max/Abs/Sign and Double math accept sized integer arguments
+- Stage runtime libraries after creating the output directory
+- Field write through an array-of-Structure property no longer crashes codegen
+- Reject UInt64 arguments to Math.Min/Max/Abs/Sign
+- Can only do this inside a step
+
+## Changes
+- ScrollBar sample cross-compiles write to their own lane directories
+- Design check, Needs Human Review spotlight, feature requests exempt from plan docs
+- Xojo shim: DesktopSegmentedButton over core's SegmentedControl (CTL-29)
+- Xojo shim: DesktopWindow mouse events with Xojo's signatures (WIN-21); core request for key/paint events
+- Xojo shim: TextEncoding.Chr returns Unicode text instead of "" for raw-byte cases (STR-6)
+- Xojo shim: TextEncoding.Chr is the character value in that encoding (STR-6)
+- Xojo shim: file dialog filter grammar (FS-10), TextEncoding.Code/Chr/IsValidData (STR-6), CTL-15 check
+- Design check, Needs Human Review spotlight, no plan-doc judging of feature requests
+- A native row of joined selectable segments
+- Xojo shim: Changed sets Window.DocumentEdited (WIN-23)
+- Merge remote-tracking branch 'Github/main' into feat/xojo-shim
+- Dap-liblldb-runtime-name removes its scratch directory
+- Window.DocumentEdited: the macOS edited dot in the close button
+- Xojo shim: DesktopWindow.Changed also sets Window.DocumentEdited (WIN-23)
+- Merge remote-tracking branch 'Github/feat/window-document-edited' into feat/xojo-shim
+- Xojo shim: DesktopWindow.DefaultLocation (WIN-24)
+- Xojo shim: DesktopWindow.ContentsChanged (WIN-23); sheet notes on WIN-20/21 and SER-1/2
+- Xojo shim: AddTrayItem/RemoveTrayItem and DesktopContainer.EmbedWithin (WIN-33, WIN-37)
+- Xojo shim: DesktopMenuBar.AddMenu(item), menu bookkeeping, per-item MenuItemSelected (WIN-39/40/41)
+- Xojo shim: Resizing, AddControl, BitmapForCaching and a working Refresh (WIN-2, WIN-19, WIN-26)
+- Updated triage skill
+- TimeZone.Local reports the host's real zone name and abbreviation; FromSystem
+- Triage rules update
+
+
+---
+
 # v0.74.0
 
 ## New Features
