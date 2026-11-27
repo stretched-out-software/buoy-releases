@@ -1,3 +1,51 @@
+# v0.75.1
+
+## Bug Fixes
+- Windows FileSystemItem paths are UTF-8 Strings at the Buoy boundary
+- View-block Constraints compile via ConstraintGroup.AddToParent(View)
+- Windows ShowModally restores the other windows when a handler throws
+- FileSystemItem.Delete/IsSymlink ignore a trailing separator on a link
+- Windows System.EnvironmentVariable uses the wide Win32 API
+- View-block Constraints compile via a ConstraintGroup.AddToParent(View)
+- Make SyncLock scope unlock idempotent
+- Return/Exit inside Finally no longer crashes the compiler
+- Linux Prefs confines a domain's file to the app config directory
+- Windows Button.PerformClick calls the click callback directly
+- PDFGraphics paths set paint state before reaching libharu
+- Linux Prefs legacy cleanup uses an encoder round-trip test
+- Linux Prefs legacy cleanup never unlinks another domain's file
+- Linux Prefs delete also removes a legacy raw-named file
+- Load a module file once when imported under two spellings
+- Linux Optional Declare reuses an already-loaded library
+- Linux Button.PerformClick calls the click callback directly
+- Linux Graphics.NativeHandle returns the real cairo_t*
+- Xojo plugin sample reaches instance data via REALGetClassData
+- Resolve module-qualified and selectively-imported generic functions
+- Export exp2/exp2f from Linux libm and Windows ucrtbase stubs
+- MacOS Canvas.Invalidate use-after-free when canvas is released
+- Stage Linux runtime .so sidecars atomically
+- Export exp2/exp2f from the Linux libm and Windows ucrtbase stubs
+- MacOS Canvas.Invalidate/InvalidateRect no longer read a freed canvas
+- Lexer reports non-ASCII unexpected character once as valid UTF-8
+- GTK Window teardown after Close touches finalized widgets
+- Stage Linux runtime .so sidecars atomically (temp file + rename)
+- GTK ListBox teardown use-after-free after ReloadData
+- Root Main stays the entry point when an imported module defines Main
+- HTTPServer enforces MaxHeaderBytes on complete header blocks
+- Lexer reports a non-ASCII unexpected character once, as valid UTF-8
+- GTK Window teardown after Close no longer touches finalized native widgets
+- GTK ListBox forgets cell widgets on factory teardown (use-after-free after ReloadData)
+
+## Changes
+- Revert "fix: Linux Prefs legacy cleanup uses an encoder round-trip test"
+- Merge main into fix/linux-button-action-throw-performclick
+- Xojo shim: window key/paint/drag stubs (WIN-20, WIN-21); core feature requests
+- Xojo shim: stubs for DesktopWindow key, paint and drag events (WIN-20, WIN-21)
+- Xojo shim: window mouse events (WIN-21), Chr fix; DT-3 and key/paint notes
+
+
+---
+
 # v0.75.0
 
 ## New Features
